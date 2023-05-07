@@ -216,6 +216,10 @@ main {
   .event-description {
     padding: 2px;
   }
+
+  .event-date {
+    padding-right: 8px;
+  }
   
   .event-date {
     font-weight: bold;
