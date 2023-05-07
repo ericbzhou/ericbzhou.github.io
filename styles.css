@@ -147,7 +147,9 @@ main {
 }
 
 .sidebar .social-media-links li {
-    margin-bottom: 10px;
+    list-style-type: none;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .sidebar .social-media-links a {
@@ -255,7 +257,7 @@ main {
   
   .research-title {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .collapsible {
@@ -280,7 +282,22 @@ main {
     display: none;
     overflow: hidden;
   }
+
+  /* Awards */
+  .awards {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
   
+  .award {
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+  }
+
   /* Tags for each research item */
   .tag {
     display: inline-block;
@@ -347,4 +364,15 @@ main {
     .econ::before {
       content: "Economics of Unstructured Data";
     }
-  
+
+/* embed CV pdf in page */
+.cv {
+  position: absolute;
+  width: 50%;
+  height: 90%;
+  margin-top: 30px;
+}
+  .cv embed {
+    width: 100%;
+    height: 100%;
+  }
