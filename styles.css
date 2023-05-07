@@ -369,7 +369,7 @@ main {
 .cv {
   position: absolute;
   width: 50%;
-  height: 90%;
+  height: 100%;
   margin-top: 30px;
 }
   .cv embed {
