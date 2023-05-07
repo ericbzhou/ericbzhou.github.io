@@ -108,8 +108,8 @@
 }
 
 body {
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 25%;
+    margin-right: 10%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -119,7 +119,7 @@ body {
 }
 
 main {
-    margin-left: 240px;
+    margin-left: 15%;
 }
 
 .red-bold {
@@ -131,8 +131,8 @@ main {
 .sidebar {
     position: fixed;
     top: 0;
-    left: 300px;
-    width: 250px;
+    left: 10%;
+    width: 20%;
     padding: 20px;
     background-color: #f2f2f2;
     margin-top: 60px;
