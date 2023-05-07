@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Academic Website</title>
+    <title>Eric B. Zhou - Home Page</title>
+    <link rel="stylesheet" href="styles_2.css">
 </head>
 <body>
-    <h1>Welcome to my academic website!</h1>
-    <p>This is a generic homepage. Replace this text with your own content.</p>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#research">RESEARCH</a></li>
+            <li><a href="#cv">CV</a></li>
+        </ul>
+    </nav>
+    <!-- sidebar which includes my profile picture and social media information with links and symbols for each site -->
+    <div class="sidebar">
+        <img src="imgs/ericbzhou.jpg" alt="Profile Picture" class="profile-picture">
+        <center>
+            <h1>Eric B. Zhou</h1>
+            <h4>PhD Candidate in Information Systems</h4>
+            <h4>Boston University Questrom School of Business</h4>
+        </center>
+        <ul class="social-media-links">
+            <a href="mailto:ericbzhou0513@gmail.com"><img src =".png" alt="Email" width="30" height="10"></a>
+            <!-- <a href="https://www.bu.edu/questrom/profile/eric-zhou/"><img src="imgs/bu.png" alt="School Webpage" width="30" height="10"</a>  -->
+            <a href="https://www.linkedin.com/in/ericbzhou/"><img src=".png" alt="LinkedIn" width="30" height="10"></a>
+            <!-- <a href=""><img src=".png" alt="Google Scholar" width="30" height="10"></a> -->
+            <!-- Add more social media links as needed -->
+        </ul>
+    </div>
+    <main>
+
+    <!-- section in main body for text -->
+    <h1>ABOUT ME</h1>
+        <p>
+            I am a third-year <span class="red-bold">PhD candidate in Information Systems at Boston University Questrom School of Business (expected 2026)</span> and am also affiliated with the Digital Business Institute at Questrom.
+            I am advised by <a href="https://www.leedokyun.com/">Dokyun Lee</a>.
+        </p>
+
+        <p>
+            My research interests are broadly the <span class="red-bold">application, innovation and impact</span> of AI in human-machine collaborative systems and the future of work. In particular, I am interested in:
+        </p>
+        <!-- list of research interests -->
+        <ul>
+            <li>Computational creativity</li>
+            <li>Unintended consequences of AI</li>
+            <li>Economics of unstructured data</li>
+        </ul>
+        <p>
+            I hold a <span class="red-bold">Bachelor's degree in Marketing and Finance from Washington University in St. Louis (2018)</span>, a <span class="red-bold">Master's degree in Business Administration from Carnegie Mellon University (2021)</span>, and a <span class="red-bold">Master's degree of Philosophy in Business Administration from Washington University in St. Louis (2023)</span>.
+            Prior to my PhD studies, I worked as a marketing consultant for Nielsen and as a Machine Learning contractor for a non-profit organization.
+        </p>
+
+    <h1>NEWS</h1>
+    <!-- separate section for a newsfeed containing my latest updates -->
+    <table class="news-feed">
+        <tr>
+            <td>
+                <span class="event-date">August 2023</span>
+            </td>
+            <td>
+                <span class="event-description">Moved to Boston University Questrom School of Business as an <span class="event-red">Information Systems PhD Candidate and Digital Business Institute affiliate</span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="event-date">May 2023</span>
+            </td>
+            <td>
+                <span class="event-description">Graduated from <span class="event-description event-red">Washington University in St. Louis with a Master's of Philosophy in Business Administration</span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="event-date ">December 2022</span>
+            </td>
+            <td>
+                <span class="event-description event-blue">WISE Best Student Paper Finalist</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="event-date">May 2021</span>
+            </td>
+            <td>
+                <span class="event-description">Graduated from <span class="event-description event-red">Carnegie Mellon University Tepper School of Business with a Master's of Business Administration</span></span>
+            </td>
+        </tr>
+    </table>
+  
+</div>
+</main>
 </body>
-<!-- sidebar which includes my profile picture and social media information with links and symbols for each site -->
-<div id="sidebar">
-    <img src="profile.jpg" alt="Profile Picture" width="200" height="200">
-    <ul>
-        <li><a href="https://www.linkedin.com/"><img src=".png" alt="LinkedIn" width="50" height="50"></a></li>
-        <li><a href="https://www.scholar.com/"><img src=".png" alt="Google Scholar" width="50" height="50"></a></li>
-    </ul>
-</div>
-<!-- section in main body for text -->
-<div id="main">
-    <h2>ABOUT ME</h2>
-    <p>I am broadly interested in the application, innovation, and impact of technology in human-machine collaborative systems and the future of work. In particular, I am interested in:</p>
-    <!-- list of research interests -->
-    <ul>
-        <li>Computational creativity</li>
-        <li>Unintended consequences of AI</li>
-        <li>Economics of unstructured data</li>
-    <h2>Publications</h2>
-</div>
-<!-- separate section for a newsfeed containing my latest updates -->
-<div id="newsfeed">
-    <h2>NEWSFEED</h2>
-    <p>TEXT.</p>
-</div>
 </html>
