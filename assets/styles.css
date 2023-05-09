@@ -109,10 +109,11 @@
 
 body {
     margin-left: 25%;
-    margin-right: 25%;
+    margin-right: 15%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 18px;
+    font-size: 95%;
     line-height: 1.7;
     color: #000000;
     padding: 30px;
@@ -129,12 +130,13 @@ main {
 
 /* Side bar for personal information */
 .sidebar {
+    font-size: 90%;
     position: fixed;
     top: 0;
     left: 15%;
-    width: 13%;
-    height: 80%;
-    padding: 20px;
+    width: 15%;
+    height: 85%;
+    padding: 10px;
     background-color: #f2f2f2;
     margin-top: 60px;
     border-radius: 10px;
@@ -150,7 +152,8 @@ main {
 .sidebar .social-media-links li {
     list-style-type: none;
     font-size: 14px;
-    margin-bottom: 5px;
+    font-size:80%;
+    margin-bottom: 3px;
 }
 
 .sidebar .social-media-links a {
@@ -252,6 +255,7 @@ main {
 
 /* research */
 .research {
+    font-size: 90%;
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
   }
