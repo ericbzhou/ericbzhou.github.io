@@ -289,6 +289,18 @@ main {
     overflow: hidden;
   }
 
+  .conferences {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .conference {
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+  }
   /* Awards */
   .awards {
     font-size: 14px;
