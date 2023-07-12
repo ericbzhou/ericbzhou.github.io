@@ -252,21 +252,12 @@ main {
     /* background-color: #e6a0a0; */
     color: #a82828;
   }
-
-/* research */
-.research {
-    font-size: 90%;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .research-title {
+/* header */
+.header-title {
     cursor: pointer;
-    font-size: 16px;
   }
-  
-  .collapsible {
-    font-size: 100%;
+
+  .collapsible-header {
     background-color: #f1f1f1;
     color: #333;
     padding: 8px 16px;
@@ -278,10 +269,22 @@ main {
     border-radius: 5px;
   }
   
-  .collapsible:hover {
+  .collapsible-header:hover {
     background-color: #ddd;
   }
+
+/* research */
+.research {
+    font-size: 90%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
   
+  .research-title {
+    cursor: pointer;
+    font-size: 24px;
+  }
+
   .content {
     padding: 0 18px;
     font-size: 14px;
@@ -383,7 +386,22 @@ main {
     .econ::before {
       content: "Economics of Unstructured Data";
     }
-
+    .collapsible-item {
+      font-size: 100%;
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 8px 16px;
+      border: none;
+      text-align: left;
+      outline: none;
+      width: 100%;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+    }
+    
+    .collapsible-item:hover {
+      background-color: #ddd;
+    }
 /* embed CV pdf in page */
 .cv {
   position: absolute;
