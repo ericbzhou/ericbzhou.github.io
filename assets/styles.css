@@ -353,7 +353,6 @@ main {
     .impact::before {
       content: "Impact";
     }
-
     /* Tags for topics */
     .cc {
       background-color: #a0c0e6;
@@ -362,7 +361,6 @@ main {
     .cc::before {
       content: "Computational Creativity";
     }
-
     .genai {
       background-color: #a8e6a0;
       color: #3c9e3e;
@@ -370,7 +368,6 @@ main {
     .genai::before {
       content: "Generative AI";
     }
-
     .hai {
       background-color: #e6a0a0;
       color: #a82828;
@@ -378,7 +375,6 @@ main {
     .hai::before {
       content: "Human-AI Collaboration";
     }
-  
     .econ {
       background-color: #e6a0a0;
       color: #a82828;
@@ -386,6 +382,7 @@ main {
     .econ::before {
       content: "Economics of Unstructured Data";
     }
+
     .collapsible-item {
       font-size: 100%;
       background-color: #f1f1f1;
@@ -398,10 +395,10 @@ main {
       transition: background-color 0.3s;
       border-radius: 5px;
     }
-    
     .collapsible-item:hover {
       background-color: #ddd;
     }
+    
 /* embed CV pdf in page */
 .cv {
   position: absolute;
