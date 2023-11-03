@@ -419,3 +419,10 @@ main {
     text-align: left;
     margin-top: 10px; /* Adjust the margin as needed */
 }
+
+footer {
+  display: "block";
+  text-align: left;
+  position: relative;
+  top: 100;
+}
