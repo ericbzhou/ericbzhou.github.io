@@ -110,24 +110,77 @@ function createFooter(date) {
 // ============ //
 // RESEARCH
 // ============ //
-function createNewsFeed(news) {
-  // Generate HTML content
-  const prefix = `
-    <h1>NEWS</h1>
-      <table class="news-feed">
-  `;
+function createResearchFeed(papers) {
+  const content = papers.map((item) => {
+    // Create the link string
+    let linkString = "";
+    if (item.links.length > 0) {
+      linkString += "&emsp;|&emsp; "
+      for (const link of item.links) {
+        linkString += `<a href="${link.href}">[${link.site}]</a>`;
+      }
+    }
 
-  const content = news.map((item) => `
-    <tr>
-      <td><span class="event-date">${item.date}</span></td>
-      <td><span class="event-description">${item.description}${item.link ? `<a href="${item.link}" target="_blank">here</a>` : ""}</span></td>
-    </tr>
-  `).join("");
 
-  const suffix = `
-      </table>
-  `;
+      // Create the conference string
+      let conferenceString = "";
+      if (item.conferences.length > 0) {
+        conferenceString = `Presented at:<br><table>`;
+        conferenceString += item.conferences.map((conference) => `
+          <tr>
+            <td>${conference.date}</td>
+            <td>${conference.name}</td>
+            <td>${conference.location}</td>
+          </tr>
+        `).join("");
+        conferenceString += "</table>";
+      }
+    
 
-  // Append prefix, content, and suffix
-  return prefix + content + suffix;
+      // Update status string with journal if present
+      let statusString = `<i>${item.status.stage}`;
+      if (item.status.journal) {
+        statusString += ` at ${item.status.journal}</i>`;
+      }
+      else {
+        statusString += `</i>`;
+      }
+
+
+    return `
+      <p>
+        <div class="research-title">${item.title}</div>
+        <div class="research-contents">
+          ${item.authors}
+          <br>
+          ${statusString}${linkString}   
+          <br>
+          \"${item.abstract}\"
+          <br>
+          <table>
+            ${conferenceString}
+          </table>
+        </div>
+      </p>
+    `;
+  }).join("");
+
+  return content;
+}
+
+// ============ //
+// TALKS
+// ============ //
+function createTalksFeed(talks) {
+  let content = "<ol>";
+
+  talks.forEach((item) => {
+    content += `
+      <li>
+        ${item.date} - <i>${item.event}<i> at ${item.location} - <strong>${item.title}</strong>
+      </li>
+    `;
+  });
+
+  return content += "</ol>";
 }

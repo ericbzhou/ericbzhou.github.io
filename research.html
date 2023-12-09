@@ -30,7 +30,7 @@
         <main>
             <h1>RESEARCH STATEMENT</h1>
                 <p>
-                    My research interests are broadly the <span class="red-bold">application, innovation and impact</span> of AI and frontier technologies on society and in the future of work. In particular, I am interested in:
+                    My research interests are broadly in the <span class="red-bold">application, innovation and impact</span> of AI and frontier technologies on society and in the future of work. In particular, I am interested in:
                 </p>
                 <ul>
                     <li>Computational creativity</li>
@@ -41,11 +41,125 @@
                 <p>
                     I apply a combination of <span class="red-bold">deep learning, multimodal feature extraction, and causal inference methods</span> to large-scale datasets to derive insights from unstructured data.
                 </p>
-            <h1>PUBLICATIONS</h1>
-            <span class="arrow">&#8615;</span>
-            <h1>CONFERENCES & TALKS</h1>
 
-            <h1>WORKS IN PROGRESS</h1>
+            <h1>PROJECTS</h1>
+
+            <script>
+                const projects = [
+                    {
+                        title: "Human Incumbents vs. Generative Entrants",
+                        authors: "Eric Zhou, Dokyun Lee",
+                        status: {
+                            stage:"Performing data analysis...",
+                            journal:""
+                            },
+                        links:[],
+                        abstract:"Coming soon...",
+                        conferences:[],
+                    },
+                    {
+                        title: "New Generative AI project coming soon...",
+                        authors: "Dokyun Lee, Eric Zhou",
+                        status: {
+                            stage:"Performing data analysis...",
+                            journal:""
+                            },
+                        links:[],
+                        abstract:"Coming soon...",
+                        conferences:[],
+                    },
+                    {
+                        title: "Generative AI, Human Creativity, and Art",
+                        authors: "Eric Zhou, Dokyun Lee",
+                        status: {
+                            stage:"Under review",
+                            journal:"PNAS"
+                            },
+                        links:[
+                            {
+                                site:"SSRN",
+                                href:"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594824#paper-references-widget"
+                            },
+                        ],
+                        abstract:"Recent artificial intelligence (AI) tools have demonstrated the ability to produce outputs traditionally considered creative. One such system is text-to-image generative AI (e.g., Midjourney, Stable Diffusion, DALL-E), which automates humans' artistic execution to generate digital artworks. Utilizing a dataset of over 4 million artworks from more than 50,000 unique users, our research shows that over time, text-to-image AI significantly enhances human creative productivity by 25\% and increases the value as measured by the likelihood of receiving a favorite per view by 50\%. While peak artwork content novelty, defined as focal subject matter and relations, increases over time, average content novelty declines, suggesting an expanding but inefficient idea space. Additionally, there is a consistent reduction in both peak and average visual novelty, captured by pixel-level stylistic elements. Importantly, AI-assisted artists who can successfully explore more novel ideas, regardless of their overall novelty prior to AI assistance, may produce artworks that their peers evaluate more favorably. Lastly, AI adoption decreased value capture (favorites earned) concentration among adopters. The results suggest that ideation and filtering are likely necessary skills in the text-to-image process, thus giving rise to \"generative synesthesia\" - the harmonious blending of human exploration and AI exploitation to discover new creative workflows.",
+                        conferences:[
+                            {
+                                name:"INFORMS Annual Meeting 2023",
+                                date:"October 2023",
+                                location:"Phoenix, Arizona",
+                            },
+                            {
+                                name:"INFORMS Workshop on Data Science 2023",
+                                date:"October 2023",
+                                location:"Phoenix, Arizona",
+                            },
+                            {
+                                name:"Wharton Generative AI & Business Workshop",
+                                date:"September 2023",
+                                location:"San Francisco, California",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Economics of Image-Based Seller Quality Signals",
+                        authors: "Eric Zhou, Xiang Hui, Dokyun Lee",
+                        status: {
+                            stage:"Work in progress",
+                            journal:""
+                        },
+                        abstract:"In online marketplaces, sellers can rely on alternative mechanisms to signal their quality when they lack rich transaction histories. Using scraped data on GPU sales from eBay, we find that certain image signals can substitute for reputation to increase conversion rates amongst sellers with less than 100% positive reputation, and conditional on making a sale, can realize a 5% price premium on average. However, the effects are only significant for less reputable sellers.",
+                        links:[],
+                        conferences:[
+                            {
+                                name:"WISE: Workshop on Information Systems and Economics",
+                                date:"December 2022",
+                                location:"Copenhagen, Denmark",                           
+                            },
+                        ],
+                    },
+                ];
+                const projectsContent = createResearchFeed(projects);
+                document.body.querySelector("main").innerHTML += projectsContent;
+            </script>
+
+            <h1>CONFERENCES & TALKS</h1>
+                <script>
+                    const talks = [
+                        {
+                            date: "October 2023",
+                            event: "INFORMS Workshop on Data Science",
+                            location: "Phoenix, Arizona",
+                            title: "Generative AI, Human Creativity, and Art",
+                            authors: ["Eric Zhou*", "Dokyun Lee"]
+                        },
+                        {
+                            date: "October 2023",
+                            event: "INFORMS Annual Meeting",
+                            location: "Phoenix, Arizona",
+                            title: "Generative AI, Human Creativity, and Art",
+                            authors: ["Eric Zhou*", "Dokyun Lee"]
+                        },
+                        {
+                            date: "September 2023",
+                            event: "Wharton Business & Generative AI Workshop",
+                            location: "San Francisco, California",
+                            title: "Generative AI, Human Creativity, and Art",
+                            authors: ["Eric Zhou", "Dokyun Lee*"]
+                        },
+                        {
+                            date: "December 2022",
+                            event: "WISE: Workshop on Information Systems and Economics",
+                            location: "Copenhagen, Denmark",
+                            title: "Economics of Image-Based Seller Quality Signals",
+                            authors: ["Eric Zhou*", "Xiang Hui", "Dokyun Lee"],
+                            award: "WISE 2022 Best Student Paper Finalist"
+                        }
+                    ]
+
+                    const talksContent = createTalksFeed(talks);
+                    document.body.querySelector("main").innerHTML += talksContent;
+                </script>
+
             
             <script>
                 const footerContent = createFooter("December 9, 2023");
