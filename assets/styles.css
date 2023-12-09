@@ -106,13 +106,12 @@
   src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
+/* ===================== */
+/* General Formatting */
+/* ===================== */
 body {
-    margin-left: 25%;
-    margin-right: 15%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 18px;
     font-size: 95%;
     line-height: 1.7;
     color: #000000;
@@ -120,93 +119,99 @@ body {
 }
 
 main {
-    margin-left: 15%;
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 20%;
 }
 
-.red-bold {
-    color: #921313;
-    font-weight: bold;
-}
 
-/* Side bar for personal information */
-.sidebar {
-    font-size: 90%;
-    position: fixed;
-    top: 0;
-    left: 15%;
-    width: 15%;
-    height: 85%;
-    padding: 10px;
-    background-color: #f2f2f2;
-    margin-top: 60px;
-    border-radius: 10px;
-}
-
-.sidebar img {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-.sidebar .social-media-links li {
-    list-style-type: none;
-    font-size: 14px;
-    font-size:80%;
-    margin-bottom: 3px;
-}
-
-.sidebar .social-media-links a {
-    color: #333;
-}
-
-.profile-picture {
-    display: flex;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-
-/* Navigation bar */
-.navbar {
+/* ===================== */
+/* Navigation Bar */
+/* ===================== */
+.navigation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
-    background-color: #b9b9b9;
-    padding: 10px 20px;
+    margin-right:10%;
+    z-index: 1;
+    background-color: #ffffff;
+    padding: 0.5% 0;
     display: flex;
     justify-content: center;
-}
-
-.navbar ul {
+    box-shadow: 0 2px 0 rgb(177, 177, 177);
+  }
+  
+  .navigation ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-.navbar li {
+  }
+  
+  .navigation li {
     display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.navbar li a {
-    font-size: 20px;
-    padding: 80px;
+    text-align: center;
+  }
+  
+  .navigation li a {
+    font-size: 175%;
+    font-weight: bold;
     color: #888888;
     text-decoration: none;
-}
-
-.navbar li a:hover {
-    color: #000000;
+    display: block;
+    text-align: center;
+    padding-right: 7em;
+  }
+  
+  .navigation li a:hover {
+    color: #ff3333;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+  }
+
+/* ===================== */
+/* Profile Information */
+/* ===================== */
+.profile {
+    font-size: 110%;
+    position: fixed;
+    top: 0;
+    left: 7.5%;
+    width: 15%;
+    height: 85%;
+    padding: 10px;
+    margin-top: 5%;
+    justify-content: center;
 }
 
+    .profile img {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .profile .profile-info li {
+        list-style-type: none;
+        font-size: 14px;
+        font-size:80%;
+        margin-bottom: 3px;
+    }
+    
+    .profile a {
+        color: #333;
+    }
+    
+    .profile-picture {
+        display: flex;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+/* ===================== */
 /* Newsfeed */
+/* ===================== */
 .news-feed {
     width: 100%;
     border-collapse: collapse;
@@ -252,177 +257,29 @@ main {
     /* background-color: #e6a0a0; */
     color: #a82828;
   }
-/* header */
-.header-title {
-    cursor: pointer;
-  }
 
-  .collapsible-header {
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 8px 16px;
-    border: none;
-    text-align: left;
-    outline: none;
-    width: 100%;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-  }
-  
-  .collapsible-header:hover {
-    background-color: #ddd;
-  }
-
-/* research */
-.research {
-    font-size: 90%;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .research-title {
-    cursor: pointer;
-    font-size: 24px;
-  }
-
-  .content {
-    padding: 0 18px;
-    font-size: 14px;
-    display: none;
-    overflow: hidden;
-  }
-
-  /* Conference */
-  .conferences {
-    font-size: 90%;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .conference-title {
-    /* cursor: pointer; */
-    padding: 0 3px;
-    font-size: 16px;
-    font-weight: normal;
-  }
-
-  /* Awards */
-  .awards {
-    font-size: 14px;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .award {
-    color: #ffffff;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-  }
-
-  /* Tags for each research item */
-  .tag {
-    display: inline-block;
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-    /* Tags for type */
-    .application {
-      background-color: #a0c0e6;
-      color: #2b66b3;
-    }
-    .application::before {
-      content: "Application";
-    }
-
-    .innovation {
-      background-color: #a8e6a0;
-      color: #3c9e3e;
-    }
-    .innovation::before {
-      content: "Innovation";
-    }
-
-    .impact {
-      background-color: #e6a0a0;
-      color: #a82828;
-    }
-    .impact::before {
-      content: "Impact";
-    }
-    /* Tags for topics */
-    .cc {
-      background-color: #a0c0e6;
-      color: #2b66b3;
-    }
-    .cc::before {
-      content: "Computational Creativity";
-    }
-    .genai {
-      background-color: #a8e6a0;
-      color: #3c9e3e;
-    }
-    .genai::before {
-      content: "Generative AI";
-    }
-    .hai {
-      background-color: #e6a0a0;
-      color: #a82828;
-    }
-    .hai::before {
-      content: "Human-AI Collaboration";
-    }
-    .econ {
-      background-color: #e6a0a0;
-      color: #a82828;
-    }
-    .econ::before {
-      content: "Economics of Unstructured Data";
-    }
-
-    .collapsible-item {
-      font-size: 100%;
-      background-color: #f1f1f1;
-      color: #333;
-      padding: 8px 16px;
-      border: none;
-      text-align: left;
-      outline: none;
-      width: 100%;
-      transition: background-color 0.3s;
-      border-radius: 5px;
-    }
-    .collapsible-item:hover {
-      background-color: #ddd;
-    }
-    
-/* embed CV pdf in page */
-.cv {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  margin-top: 30px;
-}
-  .cv embed {
-    width: 100%;
-    height: 100%;
-  }
-
-.note {
-    font-style: italic;
-    font-size: 12px;
-    color: #888;
-    text-align: left;
-    margin-top: 10px; /* Adjust the margin as needed */
-}
-
+/* ===================== */
+/* Footer */
+/* ===================== */
 footer {
-  display: "block";
-  text-align: left;
-  position: relative;
-  top: 100;
-}
+    width: 100%;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+  }
+
+/* ===================== */
+/* HORIZONTAL LINE SEPARATOR */
+/* ===================== */
+.element-with-line::after {
+    content: "";
+    display: block;
+    width: 75%; /* 75% of the element width */
+    height: 3px; /* 3px thickness */
+    background-color: black;
+    position: absolute;
+    bottom: 0; /* Positioned at the bottom of the element */
+    left: 0; /* Aligned to the left side of the element */
+    margin: 0 auto; /* Centered horizontally within the element */
+  }
+  
