@@ -7,8 +7,9 @@
         <script src="assets/utilities.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-        <!-- <script src="assets/script.js"></script> -->
+
     <body>
+
         <script>
             const navigationBarContent = createNavigationBar();
             document.body.innerHTML += navigationBarContent;
@@ -24,7 +25,8 @@
             );
             document.body.innerHTML += profileContent;
         </script>
-            <main>
+
+        <main>
             <h1>ABOUT ME</h1>
                 <p>
                     I am a third-year <span class="red-bold">PhD candidate in Information Systems at Boston University Questrom School of Business (expected 2026)</span> and am also affiliated with the Digital Business Institute at Questrom.
@@ -45,29 +47,46 @@
                     Prior to my PhD studies, I worked as a marketing consultant for a large market research firm and as a Machine Learning contractor for a non-profit organization.
                 </p>         
 
-                <!-- RESERVED FOR NEWSFEED -->
-                <script>
-                    const news = [
-                        {
-                            date:"October 2023",
-                            description:"Test1",
-                        },
-                        {
-                            date:"October 2023",
-                            description:"Test2",
-                        },
-                        {
-                            date:"October 2023",
-                            description:"Test3",
-                        }
-                    ]
-                    const newsFeed = createNewsFeed(news);
-                    document.body.querySelector("main").innerHTML += newsFeed;
+            <!-- RESERVED FOR NEWSFEED -->
+            <script>
+                const news = [
+                    {
+                        date: "October 2023",
+                        description: "Working draft of Generative AI, Human Creativity, and Art available <a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594824#paper-references-widget\" target=\"_blank\">here</a>.",
+                    },
+                    {
+                        date: "October 2023",
+                        description: "Presented Generative AI, Human Creativity, and Art at INFORMS Workshop on Data Science and Annual Meeting in Phoenix, Arizona.",
+                    },
+                    {
+                        date: "August 2023",
+                        description: "Moved to Boston University Questrom School of Business as a PhD Candidate in Information Systems and Digital Business Institute affiliate",
+                    },
+                    {
+                        date: "May 2023",
+                        description: "Graduated from Washington University in St. Louis with a Master's of Science in Business Administration",
+                    },
+                    {
+                        date: "August 2021",
+                        description: "Started PhD at Washington University in St. Louis Olin Business School",
+                    },
+                    {
+                        date: "May 2021",
+                        description: "Graduated from Carnegie Mellon University Tepper School of Business with a Master's of Business Administration",
+                    },
+                    {
+                        date: "December 2022",
+                        description: "WISE Best Student Paper Finalist",
+                    },
+                ];
 
-                    const footerContent = createFooter("December 9, 2023");
-                    document.body.querySelector("main").innerHTML += footerContent;
-                </script>
-            </main>
+                const newsFeed = createNewsFeed(news);
+                document.body.querySelector("main").innerHTML += newsFeed;
 
+                const footerContent = createFooter("December 9, 2023");
+                document.body.querySelector("main").innerHTML += footerContent;
+            </script>
+            
+        </main>
     </body>
 </html>

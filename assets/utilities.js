@@ -108,10 +108,26 @@ function createFooter(date) {
 }
 
 // ============ //
-// COLLAPSIBLE CONTENT
+// RESEARCH
 // ============ //
-function Collapsible(title, content) {
-  // collapsible content
-  this.title = title;
-  this.content = content;
+function createNewsFeed(news) {
+  // Generate HTML content
+  const prefix = `
+    <h1>NEWS</h1>
+      <table class="news-feed">
+  `;
+
+  const content = news.map((item) => `
+    <tr>
+      <td><span class="event-date">${item.date}</span></td>
+      <td><span class="event-description">${item.description}${item.link ? `<a href="${item.link}" target="_blank">here</a>` : ""}</span></td>
+    </tr>
+  `).join("");
+
+  const suffix = `
+      </table>
+  `;
+
+  // Append prefix, content, and suffix
+  return prefix + content + suffix;
 }

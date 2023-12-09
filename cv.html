@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eric B. Zhou - CV</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="assets/academicons.css">
+        <script src="assets/utilities.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <script>
+            const navigationBarContent = createNavigationBar();
+            document.body.innerHTML += navigationBarContent;
+
+            const profileContent = createProfile(
+                "imgs/ericbzhou.jpg",
+                "Eric B. Zhou",
+                "PhD Candidate in Information Systems",
+                "Boston University Questrom School of Business",
+                "ericbzhou0513@gmail.com",
+                "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
+                "https://www.linkedin.com/in/ericbzhou/"
+            );
+            document.body.innerHTML += profileContent;
+        </script>
+
+        <main>
+            <div class="cv" id="cv-embed">
+                <embed src="cv/ebzhou_cv10182023.pdf" width="800px" height="600px" type="application/pdf"></embed>
+        </main>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eric B. Zhou - Research</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="assets/academicons.css">
+        <script src="assets/utilities.js"></script>
+        <script src="assets/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <script>
+            const navigationBarContent = createNavigationBar();
+            document.body.innerHTML += navigationBarContent;
+
+            const profileContent = createProfile(
+                "imgs/ericbzhou.jpg",
+                "Eric B. Zhou",
+                "PhD Candidate in Information Systems",
+                "Boston University Questrom School of Business",
+                "ericbzhou0513@gmail.com",
+                "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
+                "https://www.linkedin.com/in/ericbzhou/"
+            );
+            document.body.innerHTML += profileContent;
+        </script>
+
+        <main>
+            <h1>RESEARCH STATEMENT</h1>
+                <p>
+                    My research interests are broadly the <span class="red-bold">application, innovation and impact</span> of AI and frontier technologies on society and in the future of work. In particular, I am interested in:
+                </p>
+                <ul>
+                    <li>Computational creativity</li>
+                    <li>Generative AI</li>
+                    <li>Human-AI collaboration</li>
+                    <li>Economics of unstructured data</li>
+                </ul>
+                <p>
+                    I apply a combination of <span class="red-bold">deep learning, multimodal feature extraction, and causal inference methods</span> to large-scale datasets to derive insights from unstructured data.
+                </p>
+            <h1>PUBLICATIONS</h1>
+            <span class="arrow">&#8615;</span>
+            <h1>CONFERENCES & TALKS</h1>
+
+            <h1>WORKS IN PROGRESS</h1>
+            
+            <script>
+                const footerContent = createFooter("December 9, 2023");
+                document.body.querySelector("main").innerHTML += footerContent;
+            </script>
+
+        </main>
+    </body>
+</html>
