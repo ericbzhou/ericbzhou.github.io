@@ -174,7 +174,7 @@ main {
     left: 0;
     width: 100%;
     z-index: 9999;
-    background-color: #921313;
+    background-color: #b9b9b9;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
@@ -201,7 +201,7 @@ main {
 }
 
 .navbar li a:hover {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
