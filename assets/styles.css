@@ -116,12 +116,33 @@ body {
     line-height: 1.7;
     color: #000000;
     padding: 30px;
+    background-color: #f0f0f0;
 }
 
 main {
     margin-top: 3%;
     margin-left: 30%;
     margin-right: 20%;
+}
+
+/* ===================== */
+/* Colors and Emphasis */
+/* ===================== */
+
+.emphasis {
+    font-weight: bold;
+}
+
+.red {
+    color: #bd2929;
+}
+
+.green {
+    color: #3c9e3e;
+}
+
+.blue {
+    color: #2b66b3;
 }
 
 
@@ -305,4 +326,27 @@ main {
     border-radius: 4px;
     margin-right: 8px;
     margin-bottom: 8px;
+  }
+
+/* ===================== */
+/* Collapsible elements */
+/* ===================== */
+.collapse-title {
+    cursor: pointer;
+  }
+
+  .collapse-header {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+  }
+  
+  .collapse-header:hover {
+    background-color: #ddd;
   }

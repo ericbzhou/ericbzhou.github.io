@@ -125,7 +125,7 @@ function createResearchFeed(papers) {
       // Create the conference string
       let conferenceString = "";
       if (item.conferences.length > 0) {
-        conferenceString = `Presented at:<br><table>`;
+        conferenceString = `<table>`;
         conferenceString += item.conferences.map((conference) => `
           <tr>
             <td>${conference.date}</td>
@@ -146,23 +146,53 @@ function createResearchFeed(papers) {
         statusString += `</i>`;
       }
 
+      // Update abstract if available
+      let abstractString = "";
+      if (item.abstract == ``) {
+        item.abstract = "Coming soon...";
+      }
+      else {
+        let abstractString = `<div class="collapse-title blue">[Abstract]</div><div class="content"><p>"`;
+        abstractString += item.abstract;
+        abstractString += "\"</p></div>";
+      }
+
+      // // Update presentations if available
+      // if (item.conferences.length > 0) {
+      //   let conferenceString = "<div class=\"collapse-title blue\">[Presentations]</div><div class=\"content\"><table>";
+      //   conferenceString += item.conferences.map((conference) => `
+      //     <tr>
+      //       <td>${conference.date}</td>
+      //       <td>${conference.name}</td>
+      //       <td>${conference.location}</td>
+      //     </tr>
+      //   `).join("");
+      //   conferenceString += "</table></div>";
+      // }
 
     return `
-      <p>
-        <div class="research-title">${item.title}</div>
-        <div class="research-contents">
-          ${item.authors}
-          <br>
-          ${statusString}${linkString}   
-          <br>
-          \"${item.abstract}\"
-          <br>
-          <table>
-            ${conferenceString}
-          </table>
-        </div>
-      </p>
-    `;
+    <p>
+      <div class="research-title">${item.title}</div>
+      <div class="research-contents">
+        ${item.authors}
+        <br>
+        ${statusString}${linkString}   
+        <br>
+        <div class="collapse-title blue">[Abstract]</div>
+          <div class="content"
+            <p>
+              \"${item.abstract}\"
+            <p>
+          </div>
+        <div class="collapse-title blue">[Presentations]</div>
+          <div class="content">
+            <table>
+              ${conferenceString}
+            </table>
+          </div>
+      </div>
+    </p>
+  `;
   }).join("");
 
   return content;
@@ -177,9 +207,12 @@ function createTalksFeed(talks) {
   talks.forEach((item) => {
     content += `
       <li>
-        ${item.date} - <i>${item.event}<i> at ${item.location} - <strong>${item.title}</strong>
+        ${item.date} - <i>${item.event}</i> at ${item.location} - <strong>${item.title}</strong>
       </li>
     `;
+    if (item.award) {
+      content += `<span class="tag" style="background-color:#238525; color:#ffffff;">${item.award}</span>`;
+    }
   });
 
   return content += "</ol>";
