@@ -193,7 +193,7 @@ function createResearchFeed(papers) {
 // TALKS
 // ============ //
 function createTalksFeed(talks) {
-  let content = "<ol>";
+  let content = `<ol>`;
 
   talks.forEach((item) => {
     content += `
@@ -206,5 +206,5 @@ function createTalksFeed(talks) {
     }
   });
 
-  return content += "</ol>";
+  return content += `</ol>`;
 }

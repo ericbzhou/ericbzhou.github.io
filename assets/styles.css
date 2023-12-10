@@ -121,9 +121,19 @@ body {
 
 main {
     margin-top: 3%;
-    margin-left: 30%;
+    margin-left: 25%;
     margin-right: 20%;
 }
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+table td {
+    padding: 0.5%;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
 
 /* ===================== */
 /* Colors and Emphasis */
