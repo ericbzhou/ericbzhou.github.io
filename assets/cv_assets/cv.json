@@ -1,0 +1,255 @@
+{
+    "cv": {
+            "information": {
+                "name": "Eric B. Zhou",
+                "email": "ericbzhou0513@gmail.com",
+                "linkedin": "https://www.linkedin.com/in/ericbzhou/",
+                "googlescholar": "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
+                "citizenship":"United States Citizen"
+            },
+        "research_interests": [
+            "Computational creativity",
+            "Generative AI",
+            "Human-AI Collaboration",
+            "Economics of Unstructured Data"
+        ],
+        "education": [
+            {
+                "name": "Ph.D. in Information Systems",
+                "school": "Boston University Questrom School of Business",
+                "start": "2023",
+                "end": "Expected 2026",
+                "advisor": "Dokyun Lee"
+            },
+            {
+                "name": "Master of Science in Business Administration",
+                "school": "Washington University in St. Louis Olin Business School",
+                "start": "2021",
+                "end": "2023"
+            },
+            {
+                "name": "Master of Business Administration",
+                "school": "Carnegie Mellon University Tepper School of Business",
+                "start": "2019",
+                "end": "2021",
+                "majors": ["Business Technologies", "Operations Research"],
+                "track": "Business Analytics"
+            },
+            {
+                "name": "Bachelor of Science in Business Administration",
+                "school": "Washington University in St. Louis Olin Business School",
+                "start": "2014",
+                "end": "2018",
+                "majors": ["Marketing", "Finance"]
+            }
+        ],
+        "research": [
+            {
+                "title": "Human Incumbents vs. Generative Entrants",
+                "authors": "<u>Eric Zhou</u>, Dokyun Lee",
+                "status": {
+                    "stage":"In Progress...",
+                    "journal":""
+                    },
+                "links":[],
+                "tags":[],
+                "abstract":"",
+                "conferences":[]
+            },
+            {
+                "title": "New Generative AI project coming soon...",
+                "authors": "Dokyun Lee, <u>Eric Zhou</u>",
+                "status": {
+                    "stage":"In Progress...",
+                    "journal":""
+                    },
+                "links":[],
+                "tags":[],
+                "abstract":"",
+                "conferences":[]
+            },
+            {
+                "title": "Generative AI, Human Creativity, and Art",
+                "authors": "<u>Eric Zhou</u>, Dokyun Lee",
+                "status": {
+                    "stage":"Under review",
+                    "journal":"PNAS"
+                    },
+                "links":[
+                    {
+                        "site":"SSRN",
+                        "href":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594824#paper-references-widget"
+                    }
+                ],
+                "tags":[],
+                "abstract":"Recent artificial intelligence (AI) tools have demonstrated the ability to produce outputs traditionally considered creative. One such system is text-to-image generative AI (e.g., Midjourney, Stable Diffusion, DALL-E), which automates humans' artistic execution to generate digital artworks. Utilizing a dataset of over 4 million artworks from more than 50,000 unique users, our research shows that over time, text-to-image AI significantly enhances human creative productivity by 25% and increases the value as measured by the likelihood of receiving a favorite per view by 50%. While peak artwork content novelty, defined as focal subject matter and relations, increases over time, average content novelty declines, suggesting an expanding but inefficient idea space. Additionally, there is a consistent reduction in both peak and average visual novelty, captured by pixel-level stylistic elements. Importantly, AI-assisted artists who can successfully explore more novel ideas, regardless of their overall novelty prior to AI assistance, may produce artworks that their peers evaluate more favorably. Lastly, AI adoption decreased value capture (favorites earned) concentration among adopters. The results suggest that ideation and filtering are likely necessary skills in the text-to-image process, thus giving rise to \"generative synesthesia\" - the harmonious blending of human exploration and AI exploitation to discover new creative workflows.",
+                "conferences":[
+                    {
+                        "name":"INFORMS Annual Meeting 2023",
+                        "date":"October 2023",
+                        "location":"Phoenix, Arizona"
+                    },
+                    {
+                        "name":"INFORMS Workshop on Data Science 2023",
+                        "date":"October 2023",
+                        "location":"Phoenix, Arizona"
+                    },
+                    {
+                        "name":"Wharton Generative AI & Business Workshop",
+                        "date":"September 2023",
+                        "location":"San Francisco, California"
+                    }
+                ]
+            },
+            {
+                "title": "Economics of Image-Based Seller Quality Signals",
+                "authors": "<u>Eric Zhou</u>, Xiang Hui, Dokyun Lee",
+                "status": {
+                    "stage":"In progress...",
+                    "journal":""
+                },
+                "tags":[],
+                "abstract":"In online marketplaces, sellers can rely on alternative mechanisms to signal their quality when they lack rich transaction histories. Using scraped data on GPU sales from eBay, we find that certain image signals can substitute for reputation to increase conversion rates amongst sellers with less than 100% positive reputation, and conditional on making a sale, can realize a 5% price premium on average. However, the effects are only significant for less reputable sellers.",
+                "links":[],
+                "conferences":[
+                    {
+                        "name":"WISE: Workshop on Information Systems and Economics",
+                        "date":"December 2022",
+                        "location":"Copenhagen, Denmark"                          
+                    }
+                ]
+            }
+        ],
+        "talks": [
+            [
+                {
+                    "date": "October 2023",
+                    "event": "INFORMS Workshop on Data Science",
+                    "location": "Phoenix, Arizona",
+                    "title": "Generative AI, Human Creativity, and Art",
+                    "authors": ["<u>Eric Zhou</u>*", "Dokyun Lee"]
+                },
+                {
+                    "date": "October 2023",
+                    "event": "INFORMS Annual Meeting",
+                    "location": "Phoenix, Arizona",
+                    "title": "Generative AI, Human Creativity, and Art",
+                    "authors": ["<u>Eric Zhou</u>*", "Dokyun Lee"]
+                },
+                {
+                    "date": "September 2023",
+                    "event": "Wharton Business & Generative AI Workshop",
+                    "location": "San Francisco, California",
+                    "title": "Generative AI, Human Creativity, and Art",
+                    "authors": ["<u>Eric Zhou</u>", "Dokyun Lee*"]
+                },
+                {
+                    "date": "December 2022",
+                    "event": "WISE: Workshop on Information Systems and Economics",
+                    "location": "Copenhagen, Denmark",
+                    "title": "Economics of Image-Based Seller Quality Signals",
+                    "authors": ["Eric Zhou*", "Xiang Hui", "Dokyun Lee"],
+                    "award": "Best Student Paper Finalist"
+                }
+            ]
+        ],
+        "teaching_experience": [
+            {
+                "semester": "Spring 2023",
+                "course": "DAT 500W: A/B Testing in Business",
+                "role": "Head Teaching Assistant",
+                "instructors": "Xiang Hui and Christopher Mondy"
+            }
+        ],
+        "work_experience": [
+            {
+                "position":"Machine Learning Contractor",
+                "employer":"Angel Flights West",
+                "location":"Remote",
+                "start":2021,
+                "end":"Present"
+            },
+            {
+                "position":"Graduate Research Assistant",
+                "employer":"Carnegie Mellon University",
+                "location":"Pittsburgh, PA",
+                "start":2019,
+                "end":2021,
+                "advisor":"Dokyun Lee"
+            },
+            {
+                "position":"Research Analyst",
+                "employer":"Nielsen BASES",
+                "location":"Wilton, CT",
+                "start":2018,
+                "end":2019
+            }
+        ],
+        "skills": [
+            {
+                "computer": ["Python", "PyTorch", "R", "SQL", "HTML/CSS", "JavaScript", "LaTeX"],
+                "languages": ["English (native)", "Mandarin Chinese (proficient)", "French (proficient"]
+            }
+        ],
+        "coursework": [
+            {
+                "semester":"Fall 2020",
+                "courses":["Economining (PhD Seminar in Business Technologies)"]
+            },
+            {
+                "semester":"Fall 2021",
+                "courses":["Microeconomics I", "Empirical Methods in Business: Advanced Econometrics", "Doctoral Seminar in Marketing"]
+            },
+            {
+                "semester":"Spring 2022",
+                "courses":["Microeconomics II", "Causal Inference", "Analytical Modeling in Marketing", "Empirical Methods in Structural Modeling"]
+            },
+            {
+                "semester":"Fall 2022",
+                "courses":["Empirical Methods in Busienss: Introductory Econometrics", "Seminar in Organization and Strategy", "Experimental and Behavioral Research Methods"]
+            },
+            {
+                "semester":"Spring 2023",
+                "courses":["Seminar in Innovation and Technology", "Seminar in Strategy", "Independent Study: Creativity"]
+            },
+            {
+                "semester":"Fall 2023",
+                "courses":["Applied Machine Learning", "Seminar in Generative AI and Causal Inference with Text", "Independent Study: Computational Creativity"]
+            }
+        ],
+        "awards": [
+            {
+                "name": "INFORMS Gold Student Scholarship",
+                "date": "October 2023"
+            },
+            {
+                "name": "WISE 2022 Best Student Paper Finalist",
+                "date": "December 2022"
+            },
+            {
+                "name": "Tepper School of Business Merit Scholarship",
+                "date": "May 2019"
+            },
+            {
+                "name": "Nielsen BASES Client Superstar Award",
+                "date": "February 2019"
+            },
+            {
+                "name": "Olin Business School Merit Scholarship",
+                "date": "August 2014"
+            },
+            {
+                "name": "Xerox Award for Innovation and Information Technology",
+                "date": "May 2014"
+            },
+            {
+                "name": "National Champion, Database Design and Applications FBLA National Leadership Conference",
+                "date": "June 2013"
+            }
+        ],
+        "service": [
+
+        ]
+    }
+}
+  

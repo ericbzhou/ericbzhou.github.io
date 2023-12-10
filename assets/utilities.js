@@ -15,14 +15,6 @@ function createNavigationBar() {
     </nav>
   `;
 
-  // Add style to the active link and the underline
-  // const activeLink = document.querySelector('.navigation a.active');
-  // if (activeLink) {
-  //   activeLink.style.borderBottom = '3px solid black';
-  //   document.querySelector('.navigation-underline').style.width = activeLink.offsetWidth + 'px';
-  //   document.querySelector('.navigation-underline').style.left = activeLink.offsetLeft + 'px';
-  // }
-
   return content;
 }
 
@@ -117,25 +109,9 @@ function createResearchFeed(papers) {
     if (item.links.length > 0) {
       linkString += "&emsp;|&emsp; "
       for (const link of item.links) {
-        linkString += `<a href="${link.href}">[${link.site}]</a>`;
+        linkString += `<a href="${link.href}" target="_blank">[${link.site}]</a>`;
       }
     }
-
-
-      // Create the conference string
-      // let conferenceString = "";
-      // if (item.conferences.length > 0) {
-      //   conferenceString = `<table>`;
-      //   conferenceString += item.conferences.map((conference) => `
-      //     <tr>
-      //       <td>${conference.date}</td>
-      //       <td>${conference.name}</td>
-      //       <td>${conference.location}</td>
-      //     </tr>
-      //   `).join("");
-      //   conferenceString += "</table>";
-      // }
-    
 
       // Update status string with journal if present
       let statusString = `<i>${item.status.stage}`;
