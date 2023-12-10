@@ -123,18 +123,18 @@ function createResearchFeed(papers) {
 
 
       // Create the conference string
-      let conferenceString = "";
-      if (item.conferences.length > 0) {
-        conferenceString = `<table>`;
-        conferenceString += item.conferences.map((conference) => `
-          <tr>
-            <td>${conference.date}</td>
-            <td>${conference.name}</td>
-            <td>${conference.location}</td>
-          </tr>
-        `).join("");
-        conferenceString += "</table>";
-      }
+      // let conferenceString = "";
+      // if (item.conferences.length > 0) {
+      //   conferenceString = `<table>`;
+      //   conferenceString += item.conferences.map((conference) => `
+      //     <tr>
+      //       <td>${conference.date}</td>
+      //       <td>${conference.name}</td>
+      //       <td>${conference.location}</td>
+      //     </tr>
+      //   `).join("");
+      //   conferenceString += "</table>";
+      // }
     
 
       // Update status string with journal if present
@@ -148,52 +148,43 @@ function createResearchFeed(papers) {
 
       // Update abstract if available
       let abstractString = "";
-      if (item.abstract == ``) {
-        item.abstract = "Coming soon...";
+      if (item.abstract.length == 0) {
+        abstractString += `Coming soon...`;
       }
       else {
-        let abstractString = `<div class="collapse-title blue">[Abstract]</div><div class="content"><p>"`;
+        abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content"><p>"`;
         abstractString += item.abstract;
-        abstractString += "\"</p></div>";
+        abstractString += `"</p></div>`;
       }
 
       // // Update presentations if available
-      // if (item.conferences.length > 0) {
-      //   let conferenceString = "<div class=\"collapse-title blue\">[Presentations]</div><div class=\"content\"><table>";
-      //   conferenceString += item.conferences.map((conference) => `
-      //     <tr>
-      //       <td>${conference.date}</td>
-      //       <td>${conference.name}</td>
-      //       <td>${conference.location}</td>
-      //     </tr>
-      //   `).join("");
-      //   conferenceString += "</table></div>";
-      // }
-
-    return `
-    <p>
-      <div class="research-title">${item.title}</div>
-      <div class="research-contents">
-        ${item.authors}
-        <br>
-        ${statusString}${linkString}   
-        <br>
-        <div class="collapse-title blue">[Abstract]</div>
-          <div class="content"
-            <p>
-              \"${item.abstract}\"
-            <p>
-          </div>
-        <div class="collapse-title blue">[Presentations]</div>
-          <div class="content">
-            <table>
-              ${conferenceString}
-            </table>
-          </div>
-      </div>
-    </p>
-  `;
-  }).join("");
+      let conferenceString = "";
+      if (item.conferences.length > 0) {
+        conferenceString += `<div class="collapse-title blue">[Presentations]</div><div class="content"><table>`;
+        conferenceString += item.conferences.map((conference) => `
+          <tr>
+            <td>${conference.date}</td>
+            <td>${conference.name}</td>
+            <td>${conference.location}</td>
+          </tr>
+        `).join("");
+        conferenceString += `</table></div>`;
+      }
+      
+  return `
+  <p>
+    <div class="research-title">${item.title}</div>
+    <div class="research-contents">
+      ${item.authors}
+      <br>
+      ${statusString}${linkString}   
+      <br>
+        ${abstractString}
+        ${conferenceString}
+    </div>
+  </p>
+`;
+}).join("");
 
   return content;
 }
