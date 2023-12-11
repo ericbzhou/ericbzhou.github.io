@@ -207,7 +207,7 @@ table td {
 /* ===================== */
 .profile {
     font-size: 110%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 7.5%;
     width: 15%;
