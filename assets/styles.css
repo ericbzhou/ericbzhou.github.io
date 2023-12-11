@@ -206,8 +206,8 @@ table td {
 /* Profile Information */
 /* ===================== */
 .profile {
-    font-size: 110%;
-    position: absolute;
+    font-size: 95%;
+    position: fixed;
     top: 0;
     left: 7.5%;
     width: 15%;
