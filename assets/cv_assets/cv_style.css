@@ -114,7 +114,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 12pt;
-    line-height: 1.7;
+    line-height: 1;
     color: #000000;
     padding: 30px;
     background-color: #f0f0f0;
@@ -152,6 +152,29 @@ body {
         font-style: italic;
         margin-top: 10px;
     }
+/* ===================== */
+/* General Formatting Utilities */
+/* ===================== */
+
+.start-align {
+    display: inline-block;
+    text-align: start;
+    flex-basis: 50%;
+}
+
+.end-align {
+    display: inline-block;
+    text-align: end;
+    flex-basis: 50%;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
 
 /* ===================== */
 /* Education */
@@ -161,7 +184,11 @@ body {
   }
   
   .education-item {
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    justify-content: space-between;
   }
   
   .education-item h2 {
@@ -172,34 +199,3 @@ body {
   .education-item p {
     margin-bottom: 0;
   }
-  
-  .education-item .school {
-    font-weight: bold;
-    display: inline-block;
-    width: 50%;
-  }
-  
-  .education-item .location {
-    font-style: italic;
-    display: inline-block;
-    text-align: end;
-    width: 50%;
-  }
-  
-  .education-item .program {
-    font-weight: bold;
-    display: inline-block;
-    width: 50%;
-  }
-  
-  .education-item .start-end {
-    font-style: italic;
-    display: inline-block;
-    text-align: end;
-    width: 50%;
-  }
-  
-  .education-item .majors {
-    font-style: italic;
-  }
-  
