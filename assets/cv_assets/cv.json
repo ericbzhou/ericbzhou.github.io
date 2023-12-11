@@ -17,27 +17,31 @@
             {
                 "name": "Ph.D. in Information Systems",
                 "school": "Boston University Questrom School of Business",
+                "location": "Boston, MA",
                 "start": "2023",
-                "end": "Expected 2026",
-                "advisor": "Dokyun Lee"
+                "end": "2026 (Expected)",
+                "notes": "Advised by Dokyun Lee"
             },
             {
                 "name": "Master of Science in Business Administration",
                 "school": "Washington University in St. Louis Olin Business School",
+                "location": "St. Louis, MO",
                 "start": "2021",
                 "end": "2023"
             },
             {
                 "name": "Master of Business Administration",
                 "school": "Carnegie Mellon University Tepper School of Business",
+                "location": "Pittsburgh, PA",
                 "start": "2019",
                 "end": "2021",
                 "majors": ["Business Technologies", "Operations Research"],
-                "track": "Business Analytics"
+                "notes": "Business Analytics Track"
             },
             {
                 "name": "Bachelor of Science in Business Administration",
                 "school": "Washington University in St. Louis Olin Business School",
+                "location": "St. Louis, MO",
                 "start": "2014",
                 "end": "2018",
                 "majors": ["Marketing", "Finance"]
