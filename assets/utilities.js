@@ -100,6 +100,56 @@ function createFooter(date) {
 }
 
 // ============ //
+// IMAGE GALLERY
+// ============ //
+function createImageGallery(folderPath) {
+  // Use 'fs' module to access files (requires Node.js environment)
+  const fs = require('fs');
+
+  // Read all files in the folder
+  const files = fs.readdirSync(folderPath);
+
+  // Filter and map valid image files
+  const images = files.filter((file) => /\.(jpg|jpeg|png)$/i.test(file))
+    .map((file) => ({
+      src: `${folderPath}/${file}`,
+      alt: file.replace(/\.[^/]+$/, ''), // Extract filename without extension
+    }));
+
+  // Generate HTML content using your existing logic
+  const prefix = `<div class="gallery">`;
+  const content = images.map((item) => `
+    <img src="${item.src}" alt="${item.alt}" class="active">
+  `).join("");
+  const suffix = `</div>`;
+
+  return prefix + content + suffix;
+}
+
+
+function changeImage() {
+  // Get the current active image
+  const activeImage = document.querySelector('.gallery img.active');
+
+  // Get the next image in the sequence
+  const nextImage = activeImage.nextElementSibling;
+
+  // Check if reached the last image
+  if (!nextImage) {
+    // Loop back to the first image
+    nextImage = document.querySelector('.gallery img:first-child');
+  }
+
+  // Remove the active class from the current image
+  activeImage.classList.remove('active');
+
+  // Add the active class to the next image
+  nextImage.classList.add('active');
+}
+
+setInterval(changeImage, 5000); // 5 seconds in milliseconds
+
+// ============ //
 // RESEARCH
 // ============ //
 function createResearchFeed(papers) {

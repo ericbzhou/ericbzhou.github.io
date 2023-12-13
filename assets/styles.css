@@ -301,6 +301,26 @@ table td {
 }
 
 /* ===================== */
+/* Image Gallery */
+/* ===================== */
+.gallery {
+  display: flex;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery img.active {
+  opacity: 1;
+}
+
+
+/* ===================== */
 /* Research */
 /* ===================== */
 .research-title {
