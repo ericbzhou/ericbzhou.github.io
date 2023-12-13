@@ -102,19 +102,9 @@ function createFooter(date) {
 // ============ //
 // IMAGE GALLERY
 // ============ //
-function createImageGallery(folderPath) {
-  // Use 'fs' module to access files (requires Node.js environment)
-  const fs = require('fs');
-
-  // Read all files in the folder
-  const files = fs.readdirSync(folderPath);
-
-  // Filter and map valid image files
-  const images = files.filter((file) => /\.(jpg|jpeg|png)$/i.test(file))
-    .map((file) => ({
-      src: `${folderPath}/${file}`,
-      alt: file.replace(/\.[^/]+$/, ''), // Extract filename without extension
-    }));
+function createImageGallery(numFiles) {
+  // Enumerate all images in gallery folder
+  // TODO
 
   // Generate HTML content using your existing logic
   const prefix = `<div class="gallery">`;
