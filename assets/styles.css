@@ -187,13 +187,13 @@ table td {
   }
   
   .navigation li a {
-    font-size: 175%;
+    font-size: 125%;
     font-weight: bold;
     color: #888888;
     text-decoration: none;
     display: block;
     text-align: center;
-    padding-right: 7em;
+    padding-right: 3em;
   }
   
   .navigation li a:hover {
@@ -206,7 +206,7 @@ table td {
 /* Profile Information */
 /* ===================== */
 .profile {
-    font-size: 110%;
+    font-size: 95%;
     position: fixed;
     top: 0;
     left: 7.5%;
@@ -299,6 +299,26 @@ table td {
     position: relative;
     margin-top: 5%;
 }
+
+/* ===================== */
+/* Image Gallery */
+/* ===================== */
+.gallery {
+  display: flex;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery img.active {
+  opacity: 1;
+}
+
 
 /* ===================== */
 /* Research */

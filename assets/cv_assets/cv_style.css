@@ -113,55 +113,98 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 95%;
-    line-height: 1.7;
+    font-size: 12pt;
+    margin: 0 25em;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    line-height: 1;
     color: #000000;
-    padding: 30px;
+    padding: 2em;
     background-color: #f0f0f0;
 }
+
+content {
+    width: 60%;
+    padding: 1em;
+  }
 
 /* ===================== */
 /* Information Heading */
 /* ===================== */
 .information {
-    /* width: 20%; */
+    margin: 20px auto;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: fixed;
-    margin-bottom: 30px;
+    display: flex;
     flex-direction: column;
-}
+    align-items: center;
+  }
 
     .name {
-        font-size: 24px;
+        font-size: 36px;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
-    .contact-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: space-around;
+    .contact-information {
+        text-align: center;
+        margin-bottom: 0;
       }
       
-    .contact-list li {
-        padding: 0% 10%;
-        border-right: 1px solid #ddd;
-    }
-    
-    .contact-list li:last-child {
-        border-right: none;
-    }
-    
-    .contact-list a {
+      .contact-information a {
         color: inherit;
         text-decoration: none;
-    }
+        padding: 0 10px;
+      }
     
     p {
         font-style: italic;
         margin-top: 10px;
     }
+/* ===================== */
+/* General Formatting Utilities */
+/* ===================== */
+
+.start-align {
+    display: inline-block;
+    text-align: start;
+    flex-basis: 50%;
+}
+
+.end-align {
+    display: inline-block;
+    text-align: end;
+    flex-basis: 50%;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* ===================== */
+/* Education */
+/* ===================== */
+.education {
+    margin-top: 2em;
+  }
+  
+  .education-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    justify-content: space-between;
+  }
+  
+  .education-item h2 {
+    font-size: 1.5em;
+    /* margin-bottom: 0.5em; */
+  }
+  
+  .education-item p {
+    margin-bottom: 0;
+  }
