@@ -92,7 +92,7 @@ function createFooter(date) {
   // Generate the footer HTML content
   const content = `
     <footer class="footer">
-      <p>&copy; 2023 Eric Zhou | Last Updated on ${date}</p>
+      <p>&copy; 2024 Eric Zhou | Last Updated on ${date}</p>
     </footer>
   `;
 
