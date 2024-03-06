@@ -145,11 +145,11 @@ setInterval(changeImage, 5000); // 5 seconds in milliseconds
 function createResearchFeed(papers) {
   const content = papers.map((item) => {
     // Create the link string
-    let linkString = "<p>";
+    let linkString = `<p style="margin:0%">`;
     if (item.links.length > 0) {
       for (const link of item.links) {
         linkString += `<a href="${link.href}" target="_blank">[${link.site}]</a>`;
-        linkString += "&emsp;|&emsp;";
+        linkString += "&emsp;";
       }
     }
     linkString += "</p>";
