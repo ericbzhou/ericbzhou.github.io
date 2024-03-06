@@ -88,7 +88,7 @@ function createNewsFeed(news) {
 // ============ //
 // FOOTER
 // ============ //
-function createFooter(date) {
+function createFooter(date = new Date().toLocaleDateString()) {
   // Generate the footer HTML content
   const content = `
     <footer class="footer">
