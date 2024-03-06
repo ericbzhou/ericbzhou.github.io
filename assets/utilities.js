@@ -147,9 +147,9 @@ function createResearchFeed(papers) {
     // Create the link string
     let linkString = "<p>";
     if (item.links.length > 0) {
-      linkString += "&emsp; | &emsp; "
       for (const link of item.links) {
         linkString += `<a href="${link.href}" target="_blank">[${link.site}]</a>`;
+        linkString += "&emsp;|&emsp;";
       }
     }
     linkString += "</p>";
