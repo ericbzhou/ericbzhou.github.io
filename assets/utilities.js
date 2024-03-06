@@ -145,13 +145,14 @@ setInterval(changeImage, 5000); // 5 seconds in milliseconds
 function createResearchFeed(papers) {
   const content = papers.map((item) => {
     // Create the link string
-    let linkString = "";
+    let linkString = "<p>";
     if (item.links.length > 0) {
-      linkString += "&emsp;|&emsp; "
+      linkString += "&emsp; | &emsp; "
       for (const link of item.links) {
         linkString += `<a href="${link.href}" target="_blank">[${link.site}]</a>`;
       }
     }
+    linkString += "</p>";
 
       // Update status string with journal if present
       let statusString = `<i>${item.status.stage}`;
