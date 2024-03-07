@@ -157,11 +157,9 @@ function createResearchFeed(papers) {
       // Update status string with journal if present
       let statusString = `<i>${item.status.stage}`;
       if (item.status.journal) {
-        statusString += ` at ${item.status.journal}</i>`;
+        statusString += ` at ${item.status.journal}`;
       }
-      // else {
-        // statusString += `</i>`;
-      // }
+      statusString += `</i>`;
 
       // Update abstract if available
       let abstractString = "";
