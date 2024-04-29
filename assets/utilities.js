@@ -143,7 +143,9 @@ setInterval(changeImage, 5000); // 5 seconds in milliseconds
 // RESEARCH
 // ============ //
 function createResearchFeed(papers) {
-  const content = papers.map((item) => {
+  const content = papers.map((item, index) => {
+    // Calculate reversed numbering (start from total papers)
+    const paperNumber = papers.length - index;
     // Create the link string
     let linkString = `<p style="margin:0%">`;
     if (item.links.length > 0) {
@@ -163,13 +165,13 @@ function createResearchFeed(papers) {
 
       // Update abstract if available
       let abstractString = "";
-      if (item.abstract.length == 0) {
-        abstractString += `Coming soon...`;
-      }
-      else {
-        abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content"><p>"`;
+      if (item.abstract.length != 0) {
+      //   abstractString += `Coming soon...`;
+      // }
+      // else {
+        abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content">"`;
         abstractString += item.abstract;
-        abstractString += `"</p></div>`;
+        abstractString += `"</div>`;
       }
 
       // // Update presentations if available
@@ -185,17 +187,14 @@ function createResearchFeed(papers) {
         `).join("");
         conferenceString += `</table></div>`;
       }
-      
   return `
   <p>
-    <div class="research-title">${item.title}</div>
+    <div class="research-title">${paperNumber}.&emsp; ${item.title}</div>
     <div class="research-contents">
       ${item.authors}
       <br>
       ${statusString}${linkString}   
-      <br>
-        ${abstractString}
-        ${conferenceString}
+      ${abstractString} ${conferenceString}
     </div>
   </p>
 `;
@@ -205,20 +204,47 @@ function createResearchFeed(papers) {
 }
 
 // ============ //
-// TALKS
+// CONFERENCES
+// ============ //
+function createConferencesFeed(conferences) {
+  // Reverse the order of conferences for numbering
+
+  let content = "<ol>";
+
+  conferences.forEach((item, index) => {
+    // Calculate reversed numbering (start from total conferences)
+    const conferenceNumber = conferences.length - index;
+
+    content += `
+        ${conferenceNumber}.&emsp; ${item.date} - <strong>${item.title}</strong> - <i>${item.event}</i> at ${item.location}
+        `;
+
+    if (item.award) {
+      content += `<br><span class="tag" style="background-color:#238525; color:#ffffff;">${item.award}</span>`;
+    }
+    content += "<br>"
+  });
+
+  content += "</ol>";
+
+  return content;
+}
+
+// ============ //
+// INVITED TALKS
 // ============ //
 function createTalksFeed(talks) {
+  // Reverse the order of talks for numbering
+
   let content = `<ol>`;
 
-  talks.forEach((item) => {
+  talks.forEach((item, index) => {
+    // Calculate reversed numbering (start from total talks)
+    const talkNumber = talks.length - index;
+
     content += `
-      <li>
-        ${item.date} - <i>${item.event}</i> at ${item.location} - <strong>${item.title}</strong>
-      </li>
-    `;
-    if (item.award) {
-      content += `<span class="tag" style="background-color:#238525; color:#ffffff;">${item.award}</span>`;
-    }
+        ${talkNumber}.&emsp; ${item.date} - <strong>${item.title}</strong> - ${item.school} ${item.department}
+        <br>`;
   });
 
   return content += `</ol>`;

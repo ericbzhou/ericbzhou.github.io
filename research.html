@@ -32,7 +32,9 @@
         <main>
             <h1>RESEARCH STATEMENT</h1>
                 <p>
-                    My research interests are broadly in the <span class="emphasis red">application, innovation and impact</span> of AI and frontier technologies on society and in the future of work. In particular, I am interested in:
+                    My research interests are broadly in the <span class="emphasis red">application, innovation and impact</span> of AI and frontier technologies on society and in the future of work.
+                    I draw inspiration from phenomena at the intersection of <span class="emphasis red">computational creativity, economics, and human-AI collaboration</span> to explore the potential benefits and unintended consequences of technology in society.
+                    In particular, I am interested in:
                 </p>
                 <ul>
                     <li>Computational creativity</li>
@@ -49,7 +51,7 @@
             <script>
                 const projects = [
                     {
-                        title: "Human Incumbents vs. Generative Entrants: The Impact of Generative AI in Creative Labor Markets",
+                        title: "Human Incumbents vs. Generative Entrants: Strategic Responses to Generative AI in Creative Labor Markets",
                         authors: "<u>Eric Zhou</u>, Dokyun Lee, Gordon Burtch",
                         status: {
                             stage:"In progress...",
@@ -61,7 +63,7 @@
                         conferences:[],
                     },
                     {
-                        title: "Who Expands the Creative Conceptual Space with Generative AI?",
+                        title: "Who Expands the Creative Frontier with Generative AI?",
                         authors: "<u>Eric Zhou</u>, Dokyun Lee, Bin Gu",
                         status: {
                             stage:"In progress...",
@@ -70,7 +72,19 @@
                         links:[],
                         tags:[],
                         abstract:"",
-                        conferences:[],
+                        conferences:[
+                            {
+                                name:"Academy of Management Annual Meeting 2024",
+                                date:"August 2024",
+                                location:"Chicago, Illinois",
+                            },
+                            {
+                                name:"Wharton AI and the Future of Work",
+                                date:"May 2024",
+                                location:"Philadelphia, Pennsylvania",
+                            },
+        
+                        ],
                     },
                     {
                         title: "Generative Artificial Intelligence, Human Creativity, and Art",
@@ -144,9 +158,39 @@
                 document.body.querySelector("main").innerHTML += projectsContent;
             </script>
 
-            <h1>CONFERENCES & TALKS</h1>
+            <h1>INVITED TALKS</h1>
+            <script>
+                const talks = [
+                    {
+                        date: "April 2024",
+                        school: "Cornell University",
+                        department: "Information Science Seminar",
+                        title: "Generative AI, Human Creativity, and Art",
+                        authors: ["<u>Eric Zhou</u>*", "Dokyun Lee"]
+                    },
+                ]
+
+                const talksContent = createTalksFeed(talks);
+                document.body.querySelector("main").innerHTML += talksContent;
+            </script>
+
+            <h1>CONFERENCES</h1>
                 <script>
-                    const talks = [
+                    const conferences = [
+                        {
+                            date: "August 2024",
+                            event: "Academy of Management Annual Meeting",
+                            location: "Chicago, Illinois",
+                            title: "Who Expands the Creative Frontier with Generative AI?",
+                            authors: ["<u>Eric Zhou</u>*", "Dokyun Lee", "Bin Gu"]
+                        },
+                        {
+                            date: "May 2024",
+                            event: "Wharton AI and the Future of Work",
+                            location: "Philadelphia, Pennsylvania",
+                            title: "Who Expands the Creative Frontier with Generative AI?",
+                            authors: ["<u>Eric Zhou</u>*", "Dokyun Lee", "Bin Gu"]
+                        },
                         {
                             date: "October 2023",
                             event: "INFORMS Workshop on Data Science",
@@ -178,8 +222,8 @@
                         }
                     ]
 
-                    const talksContent = createTalksFeed(talks);
-                    document.body.querySelector("main").innerHTML += talksContent;
+                    const conferencesContent = createConferencesFeed(conferences);
+                    document.body.querySelector("main").innerHTML += conferencesContent;
                 </script>
 
             <h1>AWARDS</h1>
