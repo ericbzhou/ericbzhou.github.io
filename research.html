@@ -45,46 +45,9 @@
                     I apply a combination of <span class="emphasis red">deep learning, multimodal feature extraction, and causal inference methods</span> to large-scale datasets to derive insights from unstructured data.
                 </p>
 
-            <h1>PROJECTS</h1>
-
+            <h1>PUBLICATIONS</h1>
             <script>
-                const projects = [
-                    {
-                        title: "Human Incumbents vs. Generative Entrants: Strategic Responses to Generative AI in Creative Labor Markets",
-                        authors: "<u>Eric Zhou</u>, Dokyun Lee, Gordon Burtch",
-                        status: {
-                            stage:"In progress...",
-                            journal:""
-                            },
-                        links:[],
-                        tags:[],
-                        abstract:"",
-                        conferences:[],
-                    },
-                    {
-                        title: "Who Expands the Creative Frontier with Generative AI?",
-                        authors: "<u>Eric Zhou</u>, Dokyun Lee, Bin Gu",
-                        status: {
-                            stage:"In progress...",
-                            journal:""
-                            },
-                        links:[],
-                        tags:[],
-                        abstract:"",
-                        conferences:[
-                            {
-                                name:"Academy of Management Annual Meeting 2024",
-                                date:"Aug. 2024",
-                                location:"Chicago, Illinois",
-                            },
-                            {
-                                name:"Wharton AI and the Future of Work",
-                                date:"May 2024",
-                                location:"Philadelphia, Pennsylvania",
-                            },
-        
-                        ],
-                    },
+                const publications = [
                     {
                         title: "Generative Artificial Intelligence, Human Creativity, and Art",
                         authors: "<u>Eric Zhou</u>, Dokyun Lee",
@@ -132,6 +95,51 @@
                                 date:"Sep. 2023",
                                 location:"San Francisco, California",
                             },
+                        ],
+                    },
+                ]
+                const publicationsContent = createResearchFeed(publications);
+                document.body.querySelector("main").innerHTML += publicationsContent;
+            </script>
+            
+            <h1>PROJECTS</h1>
+
+            <script>
+                const projects = [
+                    {
+                        title: "Human Incumbents vs. Generative Entrants: Strategic Responses to Generative AI in Creative Labor Markets",
+                        authors: "<u>Eric Zhou</u>, Dokyun Lee, Gordon Burtch",
+                        status: {
+                            stage:"In progress...",
+                            journal:""
+                            },
+                        links:[],
+                        tags:[],
+                        abstract:"",
+                        conferences:[],
+                    },
+                    {
+                        title: "Who Expands the Creative Frontier with Generative AI?",
+                        authors: "<u>Eric Zhou</u>, Dokyun Lee, Bin Gu",
+                        status: {
+                            stage:"In progress...",
+                            journal:""
+                            },
+                        links:[],
+                        tags:[],
+                        abstract:"",
+                        conferences:[
+                            {
+                                name:"Academy of Management Annual Meeting 2024",
+                                date:"Aug. 2024",
+                                location:"Chicago, Illinois",
+                            },
+                            {
+                                name:"Wharton AI and the Future of Work",
+                                date:"May 2024",
+                                location:"Philadelphia, Pennsylvania",
+                            },
+        
                         ],
                     },
                     {
