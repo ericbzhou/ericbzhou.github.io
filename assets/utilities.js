@@ -246,6 +246,7 @@ function createTalksFeed(talks) {
         ${talkNumber}.&emsp; ${item.date} - <strong>${item.title}</strong> - ${item.school} ${item.department}
         <br>`;
   });
-
-  return content += `</ol>`;
+  content += `<i>* presented by co-author</i>`;
+  content += `</ol>`;
+  return content;
 }
