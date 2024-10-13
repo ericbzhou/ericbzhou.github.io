@@ -177,7 +177,7 @@ function createResearchFeed(papers) {
       // // Update presentations if available
       let conferenceString = "";
       if (item.conferences.length > 0) {
-        conferenceString += `<div class="collapse-title blue">[Presentations]</div><div class="content"><table>`;
+        conferenceString += `<div class="collapse-title blue">[Conference Presentations]</div><div class="content"><table>`;
         conferenceString += item.conferences.map((conference) => `
           <tr>
             <td>${conference.date}</td>
@@ -187,6 +187,19 @@ function createResearchFeed(papers) {
         `).join("");
         conferenceString += `</table></div>`;
       }
+
+      // // Update invited talks if available
+      let talkString = "";
+      if (item.talks.length > 0) {
+        talkString += `<div class="collapse-title blue">[Invited Talks]</div><div class="content"><table>`;
+        talkString += item.talks.map((talk) => `
+          <tr>
+            <td>${talk.date}</td>
+            <td>${talk.school}</td>
+          </tr>
+        `).join("");
+        talkString += `</table><i>* presented by coauthor</i></div>`;
+      }
   return `
   <p>
     <div class="research-title">${paperNumber}.&emsp; ${item.title}</div>
@@ -194,7 +207,7 @@ function createResearchFeed(papers) {
       ${item.authors}
       <br>
       ${statusString}${linkString}   
-      ${abstractString} ${conferenceString}
+      ${abstractString} ${conferenceString} ${talkString}
     </div>
   </p>
 `;
@@ -208,8 +221,7 @@ function createResearchFeed(papers) {
 // ============ //
 function createConferencesFeed(conferences) {
   // Reverse the order of conferences for numbering
-
-  let content = "<ol>";
+  let content = `<h1><div class="collapse-title"><span class="arrow">&#x25B8;</span>CONFERENCE TALKS</h1><ol>`;
 
   conferences.forEach((item, index) => {
     // Calculate reversed numbering (start from total conferences)
@@ -225,28 +237,7 @@ function createConferencesFeed(conferences) {
     content += "<br>"
   });
 
-  content += "</ol>";
+  content += "</ol></div>";
 
-  return content;
-}
-
-// ============ //
-// INVITED TALKS
-// ============ //
-function createTalksFeed(talks) {
-  // Reverse the order of talks for numbering
-
-  let content = `<ol>`;
-
-  talks.forEach((item, index) => {
-    // Calculate reversed numbering (start from total talks)
-    const talkNumber = talks.length - index;
-
-    content += `
-        ${talkNumber}.&emsp; ${item.date} - <strong>${item.title}</strong> - ${item.school} ${item.department}
-        <br>`;
-  });
-  content += `<i>* presented by co-author</i>`;
-  content += `</ol>`;
   return content;
 }
