@@ -198,7 +198,7 @@ function createResearchFeed(papers) {
             <td>${talk.school}</td>
           </tr>
         `).join("");
-        talkString += `</table><i>* presented by coauthor</i></div>`;
+        // talkString += `</table><i>* presented by coauthor</i></div>`;
       }
   return `
   <p>
