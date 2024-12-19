@@ -381,3 +381,140 @@ table td {
   .collapse-header:hover {
     background-color: #ddd;
   }
+
+/* ===================== */
+/* Image Gallery */
+/* ===================== */
+/* Container for centering the gallery */
+.gallery-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the gallery */
+  align-items: center;     /* Vertically center the gallery */
+  /* min-height: 100vh;       Full viewport height */
+  width: 100%;
+  padding: 10px;           /* Optional padding around the gallery */
+  
+}
+
+.interactive-gallery {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  width: calc(80% - 2rem);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.interactive-gallery .gallery-item {
+  padding: 0;
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+  overflow: hidden;
+}
+
+.interactive-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.2s ease;
+  aspect-ratio: 1; /* Ensures images are square */
+}
+
+.interactive-gallery:hover img,
+.interactive-gallery:focus-within img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+.interactive-gallery .gallery-item:hover,
+.interactive-gallery .gallery-item:focus-within {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+
+.interactive-gallery .gallery-item:hover + .gallery-item,
+.interactive-gallery .gallery-item:focus-within + .gallery-item {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+
+/* Additional rules for further siblings */
+.interactive-gallery .gallery-item:has(+ .gallery-item:hover),
+.interactive-gallery .gallery-item:has(+ .gallery-item:focus-within) + .gallery-item {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+
+/* Fallback for inactive items */
+:root {
+  --lerp-0: 1;
+  --lerp-1: 0.6;
+  --lerp-2: 0.3;
+  --lerp-3: 0.1;
+  --lerp-4: 0.05;
+  --lerp-5: 0.02;
+  --lerp-6: 0;
+}
+
+/* ===================== */
+/* Rotating Profile Pictures */
+/* ===================== */
+.pic-ctn {
+  position: relative;
+  width: 100%; /* Adjusted to fit within the container */
+  height: 350px;
+  display: flex; /* Changed to flex for centering within the container */
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  overflow: hidden;
+  margin: 0 auto; /* Center the carousel horizontally if it's smaller than the container */
+}
+
+.pic-ctn > img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the image */
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+  border-radius: 50%; /* Circular effect */
+  animation: fade 20s infinite; /* 30s total for all images */
+  transition: opacity 2s ease; /* Smooth fade effect */
+}
+
+/* Delay each image to create the fading sequence */
+.pic-ctn > img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pic-ctn > img:nth-child(2) {
+  animation-delay: 10s; /* Each image will start 10 seconds after the previous one */
+}
+
+.pic-ctn > img:nth-child(3) {
+  animation-delay: 20s;
+}
+
+/* Define the fade animation with keyframes for opacity */
+@keyframes fade {
+  0% {
+    opacity: 0; /* Start as invisible */
+  }
+  10% {
+    opacity: 1; /* Fade in quickly */
+  }
+  80% {
+    opacity: 1; /* Stay fully visible */
+  }
+  90% {
+    opacity: 0; /* Fade out quickly */
+  }
+  100% {
+    opacity: 0; /* End as invisible */
+  }
+}

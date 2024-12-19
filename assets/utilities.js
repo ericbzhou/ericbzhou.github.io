@@ -23,39 +23,75 @@ function createNavigationBar() {
 // ============ //
 function createProfile(image, name, position, employer, email, googleScholar, linkedIn) {
   // Generate the HTML content
+  // const content = `
+  //   <div class="profile">
+  //       <center>
+  //         <img src="${image}" alt="Profile Picture" class="profile-picture">
+  //         <div class="profile-info">
+  //           <h1>${name}</h1>
+  //           <hr style="border-top: 3px solid red; width: 75%;">
+  //           <h4>${position}</h4>
+  //           <p>${employer}</p>
+  //           <hr style="border-top: 3px solid red; width: 75%;">
+  //       </center>
+  //     <ul class="profile-info">
+  //       <li>
+  //         <a href="mailto:${email}" target="_blank">
+  //           <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+  //           Email
+  //         </a>
+  //       </li>
+  //       <li>
+  //         <a href="${googleScholar}" target="_blank">
+  //           <i class="fa-brands fa-google" aria-hidden="true"></i>
+  //           Google Scholar
+  //         </a>
+  //       </li>
+  //       <li>
+  //         <a href="${linkedIn}" target="_blank">
+  //           <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+  //           LinkedIn
+  //         </a>
+  //       </li>
+  //     </ul>
+  //   </div>
+  // `;
   const content = `
-    <div class="profile">
-        <center>
-          <img src="${image}" alt="Profile Picture" class="profile-picture">
-          <div class="profile-info">
-            <h1>${name}</h1>
-            <hr style="border-top: 3px solid red; width: 75%;">
-            <h4>${position}</h4>
-            <p>${employer}</p>
-            <hr style="border-top: 3px solid red; width: 75%;">
-        </center>
-      <ul class="profile-info">
-        <li>
-          <a href="mailto:${email}" target="_blank">
-            <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
-            Email
-          </a>
-        </li>
-        <li>
-          <a href="${googleScholar}" target="_blank">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-            Google Scholar
-          </a>
-        </li>
-        <li>
-          <a href="${linkedIn}" target="_blank">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            LinkedIn
-          </a>
-        </li>
-      </ul>
-    </div>
-  `;
+  <div class="profile">
+      <center>
+        <div class="pic-ctn">
+          <img src="headshots/2.png" alt="" class="pic">
+          <img src="headshots/1.jpg" alt="" class="pic">
+        </div>
+        <div class="profile-info">
+          <h1>${name}</h1>
+          <hr style="border-top: 3px solid red; width: 75%;">
+          <h4>${position}</h4>
+          <p>${employer}</p>
+          <hr style="border-top: 3px solid red; width: 75%;">
+      </center>
+    <ul class="profile-info">
+      <li>
+        <a href="mailto:${email}" target="_blank">
+          <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+          Email
+        </a>
+      </li>
+      <li>
+        <a href="${googleScholar}" target="_blank">
+          <i class="fa-brands fa-google" aria-hidden="true"></i>
+          Google Scholar
+        </a>
+      </li>
+      <li>
+        <a href="${linkedIn}" target="_blank">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+`;
 
   return content;
 }
@@ -241,3 +277,32 @@ function createConferencesFeed(conferences) {
 
   return content;
 }
+
+// ============ //
+// IMAGE GALLERY
+// ============ //
+// function createGallery(images) {
+//   const ul = document.createElement('ul');
+//   ul.classList.add('results'); // Add the "results" class to the <ul>
+
+//   images.forEach(imageSrc => {
+//     const li = document.createElement('li');
+//     li.classList.add('result');
+
+//     const a = document.createElement('a');
+//     a.href = '#';
+
+//     const img = document.createElement('img');
+//     img.src = imageSrc;
+//     img.width = 500;
+//     img.height = 500;
+//     img.alt = '';
+
+//     a.appendChild(img);
+//     li.appendChild(a);
+//     ul.appendChild(li);
+//   });
+
+//   return ul;
+// }
+
