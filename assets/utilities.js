@@ -23,39 +23,6 @@ function createNavigationBar() {
 // ============ //
 function createProfile(image, name, position, employer, email, googleScholar, linkedIn) {
   // Generate the HTML content
-  // const content = `
-  //   <div class="profile">
-  //       <center>
-  //         <img src="${image}" alt="Profile Picture" class="profile-picture">
-  //         <div class="profile-info">
-  //           <h1>${name}</h1>
-  //           <hr style="border-top: 3px solid red; width: 75%;">
-  //           <h4>${position}</h4>
-  //           <p>${employer}</p>
-  //           <hr style="border-top: 3px solid red; width: 75%;">
-  //       </center>
-  //     <ul class="profile-info">
-  //       <li>
-  //         <a href="mailto:${email}" target="_blank">
-  //           <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
-  //           Email
-  //         </a>
-  //       </li>
-  //       <li>
-  //         <a href="${googleScholar}" target="_blank">
-  //           <i class="fa-brands fa-google" aria-hidden="true"></i>
-  //           Google Scholar
-  //         </a>
-  //       </li>
-  //       <li>
-  //         <a href="${linkedIn}" target="_blank">
-  //           <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-  //           LinkedIn
-  //         </a>
-  //       </li>
-  //     </ul>
-  //   </div>
-  // `;
   const content = `
   <div class="profile">
       <center>
@@ -134,46 +101,6 @@ function createFooter(date = new Date().toLocaleDateString()) {
 
   return content;
 }
-
-// ============ //
-// IMAGE GALLERY
-// ============ //
-function createImageGallery(numFiles) {
-  // Enumerate all images in gallery folder
-  // TODO
-
-  // Generate HTML content using your existing logic
-  const prefix = `<div class="gallery">`;
-  const content = images.map((item) => `
-    <img src="${item.src}" alt="${item.alt}" class="active">
-  `).join("");
-  const suffix = `</div>`;
-
-  return prefix + content + suffix;
-}
-
-
-function changeImage() {
-  // Get the current active image
-  const activeImage = document.querySelector('.gallery img.active');
-
-  // Get the next image in the sequence
-  const nextImage = activeImage.nextElementSibling;
-
-  // Check if reached the last image
-  if (!nextImage) {
-    // Loop back to the first image
-    nextImage = document.querySelector('.gallery img:first-child');
-  }
-
-  // Remove the active class from the current image
-  activeImage.classList.remove('active');
-
-  // Add the active class to the next image
-  nextImage.classList.add('active');
-}
-
-setInterval(changeImage, 5000); // 5 seconds in milliseconds
 
 // ============ //
 // RESEARCH
