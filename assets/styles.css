@@ -483,37 +483,34 @@ table td {
   max-height: 100%;
   opacity: 0;
   border-radius: 50%; /* Circular effect */
-  animation: fade 20s infinite; /* Total animation time for all images (3 images * 10s each) */
+  animation: fade 20s infinite; /* Total animation time for 2 images */
 }
 
-/* Adjusting delay to ensure each image stays for 10 seconds without overlaps */
 .pic-ctn > img:nth-child(1) {
-  animation-delay: 0s;
+  animation-delay: 0s; /* First image starts immediately */
 }
 
 .pic-ctn > img:nth-child(2) {
-  animation-delay: 10s; /* Ensure image 2 starts after 10s */
+  animation-delay: 10s; /* Second image starts halfway through */
 }
 
-.pic-ctn > img:nth-child(3) {
-  animation-delay: 20s; /* Ensure image 3 starts after 20s */
-}
-
-/* Define the fade animation with keyframes for opacity */
 @keyframes fade {
   0% {
     opacity: 0; /* Start as invisible */
   }
   10% {
-    opacity: 1; /* Fade in quickly */
+    opacity: 1; /* Fade in */
+  }
+  40% {
+    opacity: 1; /* Fully visible */
+  }
+  60% {
+    opacity: 0; /* Start fading out */
   }
   80% {
-    opacity: 1; /* Stay fully visible */
-  }
-  90% {
-    opacity: 0; /* Fade out quickly */
+    opacity: 0; /* Fully faded out */
   }
   100% {
-    opacity: 0; /* End as invisible */
+    opacity: 0; /* Remain invisible until the next cycle */
   }
 }
