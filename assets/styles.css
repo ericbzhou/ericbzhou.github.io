@@ -501,7 +501,7 @@ table td {
   10% {
     opacity: 1; /* Fade in */
   }
-  40% {
+  50% {
     opacity: 1; /* Fully visible */
   }
   60% {
