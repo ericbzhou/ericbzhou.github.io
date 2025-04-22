@@ -335,6 +335,22 @@ table td {
         font-size: 100%;
     }
 
+/* ===================== */
+/* Teaching */
+/* ===================== */
+.teaching-title {
+  font-size: 120%;
+  font-weight: bold;
+}
+  .teaching-contents {
+      margin-left:3%;
+      font-size: 100%;
+  }
+  .teaching-testimonial {
+    font-size: 80%;
+    font-weight: italic;
+  }
+
 
 /* ===================== */
 /* CV Embedding */

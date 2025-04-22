@@ -1,4 +1,18 @@
 // ============ //
+// FOOTER
+// ============ //
+function createFooter(date = new Date().toLocaleDateString()) {
+  // Generate the footer HTML content
+  const content = `
+    <footer class="footer">
+      <p>&copy; 2025 Eric B. Zhou | Last Updated on April 22, 2025</p>
+    </footer>
+  `;
+
+  return content;
+}
+
+// ============ //
 // NAVIGATION BAR
 // ============ //
 function createNavigationBar() {
@@ -9,6 +23,7 @@ function createNavigationBar() {
       <ul>
         <li><a href="index.html" class="${currentPath === '/index.html' ? 'active' : ''}">Home</a></li>
         <li><a href="research.html" class="${currentPath === '/research.html' ? 'active' : ''}">Research</a></li>
+        <li><a href="teaching.html" class="${currentPath === '/teaching.html' ? 'active' : ''}">Teaching</a></li>
         <li><a href="cv.html" class="${currentPath === '/cv.html' ? 'active' : ''}">CV</a></li>
       </ul>
       <div class="navigation-underline"></div>
@@ -89,95 +104,158 @@ function createNewsFeed(news) {
 }
 
 // ============ //
-// FOOTER
-// ============ //
-function createFooter(date = new Date().toLocaleDateString()) {
-  // Generate the footer HTML content
-  const content = `
-    <footer class="footer">
-      <p>&copy; 2025 Eric B. Zhou | Last Updated on April 8, 2025</p>
-    </footer>
-  `;
-
-  return content;
-}
-
-// ============ //
 // RESEARCH
 // ============ //
 function createResearchFeed(papers) {
   const content = papers.map((item, index) => {
-    // Calculate reversed numbering (start from total papers)
     const paperNumber = papers.length - index;
-    // Create the link string
-    let linkString = `<p style="margin:0%">`;
-    if (item.links.length > 0) {
-      for (const link of item.links) {
-        linkString += `<a href="${link.href}" target="_blank">[${link.site}]</a>`;
-        linkString += "&emsp;";
-      }
+
+    // Article links
+    let articleLinksString = `<p style="margin:0%">`;
+    if (item.articleLinks && item.articleLinks.length > 0) {
+      articleLinksString += item.articleLinks.map(link =>
+        `<a href="${link.href}" target="_blank">[${link.site}]</a>`
+      ).join("&emsp;");
     }
-    linkString += `</p>`;
+    articleLinksString += `</p>`;
 
-      // Update status string with journal if present
-      let statusString = `<i>${item.status.stage}`;
-      if (item.status.journal) {
-        statusString += ` at ${item.status.journal}`;
-      }
-      statusString += `</i>`;
+    // Media coverage
+    let mediaString = "";
+    if (item.mediaLinks && item.mediaLinks.length > 0) {
+      mediaString += `<p style="margin:0%"><b>Media Coverage:</b> `;
+      mediaString += item.mediaLinks.map(link =>
+        `<a href="${link.href}" target="_blank">${link.site}</a>`
+      ).join(", ");
+      mediaString += `</p>`;
+    }
 
-      // Update abstract if available
-      let abstractString = "";
-      if (item.abstract.length != 0) {
-      //   abstractString += `Coming soon...`;
-      // }
-      // else {
-        abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content">"`;
-        abstractString += item.abstract;
-        abstractString += `"</div>`;
-      }
+    // Awards
+    let awardsString = "";
+    if (item.awards && item.awards.length > 0) {
+      awardsString += `<span class="tag" style="background-color:rgb(37, 95, 255); border-radius:5px; color:rgb(255, 255, 255)">${item.awards.join(", ")}</span>`;
+    }
 
-      // // Update presentations if available
-      let conferenceString = "";
-      if (item.conferences.length > 0) {
-        conferenceString += `<div class="collapse-title blue">[Conference Presentations]</div><div class="content"><table>`;
-        conferenceString += item.conferences.map((conference) => `
-          <tr>
-            <td>${conference.date}</td>
-            <td>${conference.name}</td>
-            <td>${conference.location}</td>
-          </tr>
-        `).join("");
-        conferenceString += `</table></div>`;
-      }
+    // Status
+    let statusString = `<i>${item.status.stage}`;
+    if (item.status.journal) {
+      statusString += ` at ${item.status.journal}`;
+    }
+    statusString += `</i>`;
 
-      // // Update invited talks if available
-      let talkString = "";
-      if (item.talks.length > 0) {
-        talkString += `<div class="collapse-title blue">[Invited Talks]</div><div class="content"><table>`;
-        talkString += item.talks.map((talk) => `
-          <tr>
-            <td>${talk.date}</td>
-            <td>${talk.school}</td>
-          </tr>
-        `).join("");
-        // talkString += `</table><i>* presented by coauthor</i></div>`;
-      }
-  return `
-  <p>
-    <div class="research-title">${paperNumber}.&emsp; ${item.title}</div>
-    <div class="research-contents">
-      ${item.authors}
-      <br>
-      ${statusString}${linkString}   
-      ${abstractString} ${conferenceString} ${talkString}
-    </div>
-  </p>
-`;
-}).join("");
+    // Abstract
+    let abstractString = "";
+    if (item.abstract && item.abstract.length !== 0) {
+      abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content">"${item.abstract}"</div>`;
+    }
+
+    // Conferences
+    let conferenceString = "";
+    if (item.conferences && item.conferences.length > 0) {
+      conferenceString += `<div class="collapse-title blue">[Conference Presentations]</div><div class="content"><table>`;
+      conferenceString += item.conferences.map(conference => `
+        <tr>
+          <td>${conference.date}</td>
+          <td>${conference.name}</td>
+          <td>${conference.location}</td>
+        </tr>
+      `).join("");
+      conferenceString += `</table></div>`;
+    }
+
+    // Talks
+    let talkString = "";
+    if (item.talks && item.talks.length > 0) {
+      talkString += `<div class="collapse-title blue">[Invited Talks]</div><div class="content"><table>`;
+      talkString += item.talks.map(talk => `
+        <tr>
+          <td>${talk.date}</td>
+          <td>${talk.school}</td>
+        </tr>
+      `).join("");
+      talkString += `</table></div>`;
+    }
+
+    return `
+      <p>
+        <div class="research-title">${paperNumber}.&emsp; ${item.title}</div>
+        <div class="research-contents">
+          ${item.authors}<br>
+          ${statusString}
+          ${articleLinksString}
+          ${mediaString}
+          ${awardsString}
+          ${abstractString}
+          ${conferenceString}
+          ${talkString}
+        </div>
+      </p>
+    `;
+  }).join("");
 
   return content;
 }
+
+// ============ //
+// TEACHING
+// ============ //
+function createTeachingFeed(experiences) {
+  const content = experiences.map((item, index) => {
+    const courseNumber = experiences.length - index;
+
+    // Course title
+    const header = `<div class="teaching-title">${courseNumber}.&emsp; ${item.course}</div>`;
+
+    // Semesters (list of strings)
+    let semesterString = "";
+    if (item.semesters && item.semesters.length > 0) {
+      semesterString = `<p style="margin:0%"><b>Semester(s) Taught:</b> ${item.semesters.join(", ")}</p>`;
+    }
+
+    // Institution
+    let institutionString = "";
+    if (item.institution) {
+      institutionString = `<p style="margin:0%"><b>Institution:</b> ${item.institution}</p>`;
+    }
+
+    // Course description
+    let descriptionString = "";
+    if (item.description && item.description.trim().length > 0) {
+      descriptionString = `<p style="margin:0%">${item.description}</p>`;
+    }
+
+    // Evaluation
+    let evaluationString = "";
+    if (item.evaluation) {
+      evaluationString = `<p style="margin:0%"><b>Course Evaluation:</b> ${item.evaluation}</p>`;
+    }
+
+    // Testimonials
+    let testimonialString = "";
+    if (item.testimonials && item.testimonials.length > 0) {
+      testimonialString += `<div class="collapse-title blue">[Student Testimonials]</div><div class="content"><ul>`;
+      testimonialString += item.testimonials.map(testimonial =>
+        `<div class="teaching-testimonial"><li>"${testimonial}"</li></div>`
+      ).join("");
+      testimonialString += `</ul></div>`;
+    }
+
+    return `
+      <p>
+        ${header}
+        <div class="teaching-contents">
+          ${semesterString}
+          ${institutionString}
+          ${descriptionString}
+          ${evaluationString}
+          ${testimonialString}
+        </div>
+      </p>
+    `;
+  }).join("");
+
+  return content;
+}
+
 
 // ============ //
 // CONFERENCES
@@ -204,32 +282,3 @@ function createConferencesFeed(conferences) {
 
   return content;
 }
-
-// ============ //
-// IMAGE GALLERY
-// ============ //
-// function createGallery(images) {
-//   const ul = document.createElement('ul');
-//   ul.classList.add('results'); // Add the "results" class to the <ul>
-
-//   images.forEach(imageSrc => {
-//     const li = document.createElement('li');
-//     li.classList.add('result');
-
-//     const a = document.createElement('a');
-//     a.href = '#';
-
-//     const img = document.createElement('img');
-//     img.src = imageSrc;
-//     img.width = 500;
-//     img.height = 500;
-//     img.alt = '';
-
-//     a.appendChild(img);
-//     li.appendChild(a);
-//     ul.appendChild(li);
-//   });
-
-//   return ul;
-// }
-

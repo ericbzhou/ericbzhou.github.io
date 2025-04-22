@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eric B. Zhou - Research</title>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="assets/academicons-1.9.4/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <script src="assets/utilities.js"></script>
+        <script src="assets/script.js"></script>
+        <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <script>
+            const navigationBarContent = createNavigationBar();
+            document.body.innerHTML += navigationBarContent;
+
+            const profileContent = createProfile(
+                "headshots/2.png",
+                "Eric B. Zhou",
+                "PhD Candidate in Information Systems",
+                "Boston University Questrom School of Business",
+                "ericbzhou0513@gmail.com",
+                "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
+                "https://www.linkedin.com/in/ericbzhou/"
+            );
+            document.body.innerHTML += profileContent;
+        </script>
+
+        <main>
+            <h1>PHILOSOPHY</h1>
+                Under construction...
+
+            <h1>COURSES</h1>
+            <script>
+                const courses = [
+                {
+                    course: "IS223: Introduction to Information Systems",
+                    semesters: ["Spring 2025"],
+                    institution: "Boston University Questrom School of Business",
+                    description: "Core curriculum for all undergraduate students at Questrom; inherited materials directly from the course coordinators.",
+                    // evaluation: "#/5",
+                    testimonials: [
+                        `<b>Having you as a professor made a huge difference.</b> Hearing you critique and give your own contemporary take on the course design really validated a lot of how I was feeling. You were honest about how certain aspects could be better, and that transparency helped me stay motivated. <b>You brought real insight to the material, and because of that I ended up enjoying IS more than I probably would have in another section. Your openness made the class feel more human, and I think it helped a lot of us feel less intimidated by the content and jargon. Thank you again for everything this semester, and for giving us this space to share our background.</b>`,
+                        `I enjoyed the way you taught this class and at the beginning of the semester heavily stressed the importance of our mental health. <b>I am super happy I took this class with you and wish you the best in your future teaching careers!</b>`,
+                        `I think that the side comments and advice that you gave to the class was extremely helpful and useful as I move forward. In fact, I believe that this was the most important part of the course as a whole. <b>The advice and guidance you gave us has [given me much positive towards my career]. For my final notes - Thank you for making this class as painless as you possibly can. I really appreciate your time and effort that you gave to us.</b>`,
+                        `<b>The one thing from this course that I found useful to my academic career was the content surrounding AI, more specifically, the permission and guidance to use it as a tool to support and leverage my learning.</b> As AI is just beginning to emerge in the academic landscape, in the past, I’ve felt shameful or lazy for using it. However, <b>I appreciate how Eric gave us permission and encouraged us to use it as a tool to work smarter and learn more efficiently, and even showed us how to get the most out of its use.</b>`,
+                        `This course even made me consider an IS concentration, especially since employers are actively seeking tech-savvy candidates. Overall, I genuinely looked forward to coming to this class—not because the content was always exciting, but because it felt practical and gave me a sense of growth after each lecture. <b>The low-pressure environment also made it easier to stay engaged, and for that, I just want to say thank you.</b>`,
+                        `<b>I just want to say thank you. I came into this class hearing all the horror stories about IS being tough or boring, but your approach made it really engaging. You made the content relevant, and your emphasis on AI definitely encouraged me to use it as a learning tool instead of fearing it.</b> Thanks again for such a great semester—I really appreciated how much you cared about making the course both manageable and meaningful.`,
+                        `<b>I want to thank you, Eric. Thank you for making this class much more bearable and being someone that I think a lot of us can relate to.</b> There aren’t many opportunities where the person teaching us is someone not that much older than us. <b>You understand us better than one of these other lecturers would. Additionally, thank you for introducing us to more interesting content with your AI explanations.</b> It’s something that is practical and useful for us, undoubtedly. Like I said, there’s a lot wrong with this class, but you’ve done us a favor by helping us along the way!`,
+                        `While teaching to the class is important, real-world applications, such as going beyond course content with AI and emerging tech discussions, helped me have a different understanding when test time came around. <b>I am glad that I was able to take your course specifically, as you had a very energetic and passionate approach, as an individual who is just entering a growing industry. Other professors do not have the same direct hands-on experience with what is going on in the biztech world, as they have been ‘out of the game,’ as one could say, for a while now. Thank you for your continued interest in the class and the course content (the stuff that actually matters in the business world), as it does indeed show through in your lectures.</b>`
+                    ]
+                }
+              ]
+              const teachingContent = createTeachingFeed(courses);
+              document.body.querySelector("main").innerHTML += teachingContent;
+            </script>
+        </main>
+    </body>
+</html>

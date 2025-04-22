@@ -59,11 +59,7 @@
                             stage:"Published Mar. 2024",
                             journal:"Proceedings of the National Academy of Sciences Nexus"
                             },
-                        links:[
-                            // {
-                            //     site:'Most cited article on PNAS Nexus & top 5 most read articles since publication',
-                            //     href:''
-                            // },
+                        articleLinks: [
                             {
                                 site:"PNAS Nexus",
                                 href:"https://academic.oup.com/pnasnexus/article/3/3/pgae052/7618478"
@@ -72,6 +68,8 @@
                                 site:"SSRN",
                                 href:"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594824#paper-references-widget"
                             },
+                        ],
+                        mediaLinks:[                          
                             {
                                 site:'CVPR 2024 AI Art Gallery',
                                 href:'https://finance.yahoo.com/news/cvpr-2024-showcase-ai-art-140000002.html'
@@ -89,7 +87,9 @@
                                 href:"https://www.eurekalert.org/news-releases/1036322",
                             }
                         ],
-                        tags:[],
+                        awards:[
+                            "Most read and cited article on PNAS Nexus",
+                        ],
                         abstract:"Recent artificial intelligence (AI) tools have demonstrated the ability to produce outputs traditionally considered creative. One such system is text-to-image generative AI (e.g., Midjourney, Stable Diffusion, DALL-E), which automates humans' artistic execution to generate digital artworks. Utilizing a dataset of over 4 million artworks from more than 50,000 unique users, our research shows that over time, text-to-image AI significantly enhances human creative productivity by 25\% and increases the value as measured by the likelihood of receiving a favorite per view by 50\%. While peak artwork content novelty, defined as focal subject matter and relations, increases over time, average content novelty declines, suggesting an expanding but inefficient idea space. Additionally, there is a consistent reduction in both peak and average visual novelty, captured by pixel-level stylistic elements. Importantly, AI-assisted artists who can successfully explore more novel ideas, regardless of their overall novelty prior to AI assistance, may produce artworks that their peers evaluate more favorably. Lastly, AI adoption decreased value capture (favorites earned) concentration among adopters. The results suggest that ideation and filtering are likely necessary skills in the text-to-image process, thus giving rise to \"generative synesthesia\" - the harmonious blending of human exploration and AI exploitation to discover new creative workflows.",
                         conferences:[
                             {
@@ -170,15 +170,16 @@
                         talks:[]
                     },
                     {
-                        title: "Who Expands the Human Creative Frontier with Generative AI: Hiveminds or Maverick Masterminds?",
+                        title: "Who Expands the Human Creative Frontier with Generative AI: Hiveminds or Masterminds?",
                         authors: "<u>Eric B. Zhou</u>, Dokyun Lee, Bin Gu",
                         status: {
-                            stage:"Revisions Mar. 2025",
+                            stage:"1st round revisions - under review Apr. 2025",
                             journal:""
                             },
-                        links:[],
-                        tags:[],
-                        abstract:"How are humans adapting their creative workflows to the introduction of generative artificial intelligence (AI) tools, namely text-to-image models like Midjourney, DALL-E, and Stable Diffusion? What role does the human play in this process? We investigate how artists' adoption of text-to-image generative AI impacts their ability to contribute novel and unforeseen ideas. While these tools do not generate novel ideas independently, their rapid execution capabilities can enhance artists' ability to explore and curate ideas, improving humans' ideation process. Using large-scale data from an art platform with known AI adopters, we analyze how AI-assisted creators compare to their organic counterparts in making novel idea contributions. Our findings reveal that AI initially fosters higher novelty among a concentrated group of creators, while their novel contribution frequency is comparable to non-AI-assisted peers.  Over time, a more diverse group emerges, contributing higher novelty ideas at an accelerated rate, particularly following the release of open-source Stable Diffusion. We hypothesize that creators leverage community-driven tools to gain greater control of the generation process and refining concepts to produce novel contributions, highlighting the critical role of human agency in creative workflows.",
+                        articleLinks:[],
+                        mediaLinks:[],
+                        awards:[],
+                        abstract:"Artists are rapidly integrating generative text-to-image models into their workflows, yet how this human–AI collaboration affects creative discovery remains unclear. Leveraging large-scale data from an online art platform, we compare AI-assisted creators to matched non-adopters to assess novel idea contributions. Initially, generative AI increases novelty among a concentrated subset of artists, driven primarily by substantial productivity gains; however, marginal novelty per artifact declines post‑adoption, reflecting a shift toward high‑volume, incremental exploration, ultimately yielding a greater aggregate of novel artifacts by AI adopters. We observe no evidence of a human–AI complementarity effect beyond productivity-driven gains. Notably, the release of open-source Stable Diffusion accelerates novel contributions across a broader, more diverse group, suggesting that text‑to‑image tools facilitate exploration at scale, initially enabling persistent breakthroughs by a select “mastermind” group, driven by substantial volume increases, and subsequently enabling widespread novel contributions from an emergent “hivemind” of artists.",
                         conferences:[
                             {
                                 name:'Symposium on Statistical Challenges in Electronic Commerce Research',
@@ -233,9 +234,10 @@
                             stage:"Data exploration...",
                             journal:""
                         },
-                        tags:[],
+                        articleLinks:[],
+                        mediaLinks:[],
+                        awards:[],
                         abstract:"",
-                        links:[],
                         conferences:[],
                         talks:[]
                     },
@@ -246,9 +248,10 @@
                             stage:"Analysis...",
                             journal:""
                         },
-                        tags:[],
+                        articleLinks:[],
+                        mediaLinks:[],
+                        awards:[],
                         abstract:"",
-                        links:[],
                         conferences:[],
                         talks:[]
                     },
@@ -259,9 +262,10 @@
                             stage:"New version in progress...",
                             journal:""
                         },
-                        tags:[],
+                        articleLinks:[],
+                        mediaLinks:[],
+                        awards:["WISE 2022 Best Student Paper Finalist"],
                         abstract:"In online marketplaces, sellers can rely on alternative mechanisms to signal their quality when they lack rich transaction histories. Using scraped data on GPU sales from eBay, we find that certain image signals can substitute for reputation to increase conversion rates amongst sellers with less than 100% positive reputation, and conditional on making a sale, can realize a 5% price premium on average. However, the effects are only significant for less reputable sellers.",
-                        links:[],
                         conferences:[
                             {
                                 name:"WISE: Workshop on Information Systems and Economics",
@@ -290,7 +294,6 @@
             </ol>
             
             <script>
-                // const footerContent = createFooter("March 5, 2024");
                 const footerContent = createFooter();
                 document.body.querySelector("main").innerHTML += footerContent;
             </script>
