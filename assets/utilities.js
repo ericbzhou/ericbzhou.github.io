@@ -36,7 +36,7 @@ function createNavigationBar() {
 // ============ //
 // MY PROFILE
 // ============ //
-function createProfile(image, name, position, employer, email, googleScholar, linkedIn) {
+function createProfile(name, position, employer, email, googleScholar, linkedIn) {
   // Generate the HTML content
   const content = `
   <div class="profile">
