@@ -226,7 +226,7 @@ function createTeachingFeed(experiences) {
     // Evaluation
     let evaluationString = "";
     if (item.evaluation) {
-      evaluationString = `<p style="margin:0%"><b>Course Evaluation:</b> ${item.evaluation}</p>`;
+      evaluationString = `<p style="margin:0%"><b>Instructor Evaluation:</b> ${item.evaluation}</p>`;
     }
 
     // Testimonials
