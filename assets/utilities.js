@@ -132,7 +132,18 @@ function createResearchFeed(papers) {
     // Awards
     let awardsString = "";
     if (item.awards && item.awards.length > 0) {
-      awardsString += `<span class="tag" style="background-color:rgb(37, 95, 255); border-radius:5px; color:rgb(255, 255, 255)">${item.awards.join(", ")}</span>`;
+      // iterate over awards and create a separate span for each
+      awardsString = item.awards.map(award => 
+        `<span class="tag" style="
+          display:inline-block;
+          margin: 1px;
+          padding: 2px 2px;
+          background-color: rgb(37, 95, 255);
+          border-radius: 5px;
+          color: rgb(255, 255, 255);
+          font-size: 0.9em;
+        ">${award}</span>`
+      ).join('');
     }
 
     // Status
