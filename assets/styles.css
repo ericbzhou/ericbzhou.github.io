@@ -136,6 +136,11 @@ table td {
     vertical-align: top;
   }
 
+p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
 /* ===================== */
 /* Colors and Emphasis */
 /* ===================== */
