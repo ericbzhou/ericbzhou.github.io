@@ -245,7 +245,7 @@ function createTeachingFeed(experiences) {
     if (item.testimonials && item.testimonials.length > 0) {
       testimonialString += `<div class="collapse-title blue">[Student Testimonials]</div><div class="content"><ul>`;
       testimonialString += item.testimonials.map(testimonial =>
-        `<div class="teaching-testimonial"><li>"${testimonial}"</li></div>`
+        `<div class="teaching-testimonial"><li><p>"${testimonial}"</p></li></div>`
       ).join("");
       testimonialString += `</ul></div>`;
     }
