@@ -156,7 +156,7 @@ function createResearchFeed(papers) {
     // Abstract
     let abstractString = "";
     if (item.abstract && item.abstract.length !== 0) {
-      abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content">"${item.abstract}"</div>`;
+      abstractString += `<div class="collapse-title blue">[Abstract]</div><div class="content"><p>"${item.abstract}"</p></div>`;
     }
 
     // Conferences
