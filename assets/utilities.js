@@ -162,7 +162,7 @@ function createResearchFeed(papers) {
     // Conferences
     let conferenceString = "";
     if (item.conferences && item.conferences.length > 0) {
-      conferenceString += `<div class="collapse-title blue">[Conference Presentations]</div><div class="content"><table>`;
+      conferenceString += `<div class="collapse-title blue">[Conference Presentations]</div><div class="content"><table style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">`;
       conferenceString += item.conferences.map(conference => `
         <tr>
           <td>${conference.date}</td>
