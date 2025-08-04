@@ -5,7 +5,7 @@ function createFooter(date = new Date().toLocaleDateString()) {
   // Generate the footer HTML content
   const content = `
     <footer class="footer">
-      <p>&copy; 2025 Eric B. Zhou | Last Updated on July 12, 2025</p>
+      <p>&copy; 2025 Eric B. Zhou | Last Updated on August 4, 2025</p>
     </footer>
   `;
 
