@@ -149,7 +149,7 @@ function createResearchFeed(papers) {
     // Status
     let statusString = `<i>${item.status.stage}`;
     if (item.status.journal) {
-      statusString += ` at ${item.status.journal}`;
+      statusString += `, ${item.status.journal}`;
     }
     statusString += `</i>`;
 
