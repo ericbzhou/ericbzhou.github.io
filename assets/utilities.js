@@ -48,8 +48,8 @@ function createProfile(name, position, employer, email, googleScholar, orcid, li
         <div class="profile-info">
           <h1>${name}</h1>
           <hr style="border-top: 3px solid red; width: 75%;">
-          <h4>${position}</h4>
-          <h5>${employer}</h5>
+          <h2 style="font-size: 100%;">${position}</h2>
+          <h3 style="font-size: 100%;">${employer}</h3>
           <hr style="border-top: 3px solid red; width: 75%;">
       </center>
     <ul class="profile-info">
