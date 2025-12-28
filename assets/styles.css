@@ -106,7 +106,7 @@ p {
 /* Profile Information */
 /* ===================== */
 .profile {
-    font-size: 95%;
+    font-size: 0.9em;
     position: fixed;
     /* display: flex; */
     /* flex-direction: column; */
@@ -132,8 +132,7 @@ p {
     
     .profile .profile-info li {
         list-style-type: none;
-        font-size: 14px;
-        font-size:80%;
+        font-size: 0.9em;
         margin-bottom: 3px;
     }
     
