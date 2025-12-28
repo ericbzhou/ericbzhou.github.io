@@ -3,8 +3,8 @@
 /* ===================== */
 body {
     font-family: 'Avenir', sans-serif;
-    font-weight: 300;
-    font-size: 100%;
+    font-weight: 100;
+    font-size: 0.95em;
     line-height: 1.7;
     color: #000000;
     padding: 30px;
@@ -115,7 +115,7 @@ p {
     left: 7.5%;
     max-width: 15%;
     max-height: 85%;
-    padding: 10px;
+    padding: 1em;
     margin-top: 5%;
     overflow-y: auto;
     box-sizing: border-box;
@@ -341,6 +341,7 @@ p {
   object-fit: cover;
   object-position: center;
   transition: all 0.2s ease;
+  border-radius: 10%;
   aspect-ratio: 1; /* Ensures images are square */
 }
 
@@ -386,7 +387,7 @@ p {
 .pic-ctn {
   position: relative;
   width: 100%; /* Adjusted to fit within the container */
-  height: 350px;
+  height: 25em;
   display: flex; /* Changed to flex for centering within the container */
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering */
@@ -404,7 +405,7 @@ p {
   max-width: 100%;
   max-height: 100%;
   opacity: 0;
-  border-radius: 50%; /* Circular effect */
+  border-radius: 10%; /* Circular effect */
   animation: fade 20s infinite; /* Total animation time for 2 images */
 }
 
