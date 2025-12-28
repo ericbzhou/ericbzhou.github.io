@@ -119,7 +119,8 @@ function createNewsFeed(news) {
 // ============ //
 function createResearchFeed(papers) {
   const content = papers.map((item, index) => {
-    const paperNumber = papers.length - index;
+    // const paperNumber = papers.length - index;
+    const paperNumber = index + 1;
 
     // Article links
     let articleLinksString = `<p style="margin:0%">`;
@@ -222,7 +223,8 @@ function createResearchFeed(papers) {
 // ============ //
 function createTeachingFeed(experiences) {
   const content = experiences.map((item, index) => {
-    const courseNumber = experiences.length - index;
+    // const courseNumber = experiences.length - index;
+    const courseNumber = index + 1;
 
     // Course title
     const header = `<div class="teaching-title">${courseNumber}.&emsp; ${item.course}</div>`;
@@ -288,7 +290,8 @@ function createConferencesFeed(conferences) {
 
   conferences.forEach((item, index) => {
     // Calculate reversed numbering (start from total conferences)
-    const conferenceNumber = conferences.length - index;
+    // const conferenceNumber = conferences.length - index;
+    const conferenceNumber = index + 1;
 
     content += `
         ${conferenceNumber}.&emsp; ${item.date} - <strong>${item.title}</strong> - <i>${item.event}</i> at ${item.location}
