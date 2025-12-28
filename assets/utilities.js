@@ -95,7 +95,7 @@ function createProfile(name, position, employer, email, googleScholar, orcid, li
 function createNewsFeed(news) {
   // Generate HTML content
   const prefix = `
-    <h1>NEWS</h1>
+    <h2>NEWS</h2>
       <table class="news-feed">
   `;
 
