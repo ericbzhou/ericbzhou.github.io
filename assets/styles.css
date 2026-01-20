@@ -403,7 +403,7 @@ p {
   height: auto;
   max-width: 100%;
   opacity: 0;
-  border-radius: 10%; /* Circular effect */
+  border-radius: 35px; /* Circular effect */
   animation: fade 20s infinite; /* Total animation time for 2 images */
 }
 
