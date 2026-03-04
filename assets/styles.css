@@ -19,7 +19,7 @@ main {
 
 table {
     width: 100%;
-    margin-right:10%;
+    margin-right: 10%;
     border-collapse: collapse;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -126,7 +126,7 @@ p {
         display: block;
         margin: 0 auto;
         height: auto;
-        max-width: 80%;
+        max-width: 100%;
         margin-bottom: 20px;
     }
     
@@ -400,9 +400,8 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Center the image */
-  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 100%;
   opacity: 0;
   border-radius: 10%; /* Circular effect */
   animation: fade 20s infinite; /* Total animation time for 2 images */
