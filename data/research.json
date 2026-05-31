@@ -1,0 +1,288 @@
+[
+  {
+    "category": "working_drafts",
+    "title": "Generative AI and Creative Markets: Supply-side Responses to AI Disruption & Data Governance",
+    "authors": "[FA]Eric B. Zhou, Dokyun Lee, Gordon Burtch, Daniel Rock, Prasanna Tambe",
+    "status": "Preparing for submission to [i]Management Science[/i]",
+    "notes": "[b]Workshop on Information Systems and Economics (WISE) 2025 Best Student Paper runner-up[/b]",
+    "sort_order": 1,
+    "invited_talks": [
+      {
+        "month": "Nov.",
+        "year": "2025",
+        "venue": "University of Texas at Austin, McCombs School of Business"
+      },
+      {
+        "month": "Nov.",
+        "year": "2025",
+        "venue": "Carnegie Mellon University, Heinz College of Information Systems and Public Policy"
+      },
+      {
+        "month": "Dec.",
+        "year": "2025",
+        "venue": "University of Pennsylvania, The Wharton School"
+      },
+      {
+        "month": "Dec.",
+        "year": "2025",
+        "venue": "McGill University, Desautels Faculty of Management"
+      },
+      {
+        "month": "Mar.",
+        "year": "2026",
+        "venue": "University of Maryland, Robert H. Smith School of Business"
+      }
+    ],
+    "conference_workshop_presentations": [
+      {
+        "month": "Mar.",
+        "year": "2025",
+        "conference": "Artificial Intelligence in Management (AIM) Conference",
+        "location": "Los Angeles, CA",
+        "notes": ""
+      },
+      {
+        "month": "May",
+        "year": "2025",
+        "conference": "Wharton AI and the Future of Work",
+        "location": "Philadelphia, PA",
+        "notes": ""
+      },
+      {
+        "month": "Jun.",
+        "year": "2025",
+        "conference": "Marketing Science Conference",
+        "location": "Washington, DC",
+        "notes": "[2]"
+      },
+      {
+        "month": "Jun.",
+        "year": "2025",
+        "conference": "Symposium on Statistical Challenges in Electronic Commerce Research",
+        "location": "Cyprus, Greece",
+        "notes": "[2]"
+      },
+      {
+        "month": "Jul.",
+        "year": "2025",
+        "conference": "Academy of Management Annual Meeting",
+        "location": "Copenhagen, Denmark",
+        "notes": "[1]"
+      },
+      {
+        "month": "Sep.",
+        "year": "2025",
+        "conference": "[Plenary] Wharton People & Organizations Conference",
+        "location": "Philadelphia, PA",
+        "notes": ""
+      },
+      {
+        "month": "Oct.",
+        "year": "2025",
+        "conference": "USC x BU PhD Platform Strategy Workshop",
+        "location": "Boston, MA",
+        "notes": "[1]"
+      },
+      {
+        "month": "Oct.",
+        "year": "2025",
+        "conference": "INFORMS Annual Meeting",
+        "location": "Atlanta, GA",
+        "notes": "[1]"
+      },
+      {
+        "month": "Dec.",
+        "year": "2025",
+        "conference": "Conference on AI, ML, and Business Analytics",
+        "location": "New York, NY",
+        "notes": "[2]"
+      },
+      {
+        "month": "Dec.",
+        "year": "2025",
+        "conference": "Workshop on Information Systems and Economics (WISE)",
+        "location": "Nashville, TN",
+        "notes": "[b]Best Student Paper runner-up[/b]"
+      }
+    ]
+  },
+  {
+    "category": "publications",
+    "title": "Who Expands the Human Creative Frontier with Generative AI?",
+    "authors": "[FA]Eric B. Zhou, Dokyun Lee, Bin Gu",
+    "status": "Published in [i]Science Advances[/i] (September 2025)",
+    "sort_order": 2,
+    "invited_talks": [
+      {
+        "month": "Jul.",
+        "year": "2025",
+        "venue": "Technical University of Munich, GenAI Lab"
+      }
+    ],
+    "conference_workshop_presentations": [
+      {
+        "month": "May",
+        "year": "2024",
+        "conference": "Wharton AI and the Future of Work",
+        "location": "Philadelphia, PA",
+        "notes": ""
+      },
+      {
+        "month": "Aug.",
+        "year": "2024",
+        "conference": "Academy of Management Annual Meeting",
+        "location": "Chicago, IL",
+        "notes": "[1]"
+      },
+      {
+        "month": "Sep.",
+        "year": "2024",
+        "conference": "Wharton Business & Generative AI Workshop",
+        "location": "San Francisco, CA",
+        "notes": ""
+      },
+      {
+        "month": "Oct.",
+        "year": "2024",
+        "conference": "Conference on Information Systems and Technology (CIST)",
+        "location": "Seattle, WA",
+        "notes": ""
+      },
+      {
+        "month": "Dec.",
+        "year": "2024",
+        "conference": "Conference on AI, ML, and Business Analytics",
+        "location": "New Haven, CT",
+        "notes": ""
+      },
+      {
+        "month": "Jun.",
+        "year": "2025",
+        "conference": "Symposium on Statistical Challenges in Electronic Commerce Research",
+        "location": "Cyprus, Greece",
+        "notes": "[2]"
+      }
+    ],
+    "notes": "",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.science.org/doi/10.1126/sciadv.adu5800"
+      }
+    ]
+  },
+  {
+    "category": "publications",
+    "title": "Generative Artificial Intelligence, Human Creativity, and Art",
+    "authors": "[FA]Eric B. Zhou, Dokyun Lee",
+    "status": "Published in [i]Proceedings of the National Academy of Sciences Nexus[/i] (March 2024)",
+    "sort_order": 3,
+    "invited_talks": [
+      {
+        "month": "Apr.",
+        "year": "2024",
+        "venue": "Cornell Information Science Seminar"
+      }
+    ],
+    "conference_workshop_presentations": [
+      {
+        "month": "Sep.",
+        "year": "2023",
+        "conference": "Wharton Business & Generative AI Workshop",
+        "location": "San Francisco, CA",
+        "notes": ""
+      },
+      {
+        "month": "Oct.",
+        "year": "2023",
+        "conference": "INFORMS Workshop on Data Science",
+        "location": "Phoenix, AZ",
+        "notes": ""
+      },
+      {
+        "month": "Oct.",
+        "year": "2023",
+        "conference": "INFORMS Annual Meeting",
+        "location": "Phoenix, AZ",
+        "notes": "[1]"
+      }
+    ],
+    "notes": "[b]Ranked among the most read and cited articles on PNAS Nexus[/b]",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://academic.oup.com/pnasnexus/article/3/3/pgae052/7618478"
+      }
+    ]
+  },
+  {
+    "category": "works_in_progress",
+    "title": "Substitution Versus Discovery Effects of Generative AI in the Creative Economy",
+    "authors": "[CF]Eric B. Zhou, [CF]Moritz von Zahn, Chung-Yeh Yang, Dokyun Lee",
+    "status": "Analysis",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "",
+    "links": [],
+    "sort_order": 1
+  },
+  {
+    "category": "works_in_progress",
+    "title": "The Great Equalizer or the Rich Get Richer? Generative AI Usage and Firm Performance",
+    "authors": "[A][CF]Zhiwei Wang, [CF]Eric B. Zhou",
+    "status": "Data exploration",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "",
+    "links": [],
+    "sort_order": 2
+  },
+  {
+    "category": "works_in_progress",
+    "title": "Copyright, Originality, and Generative AI",
+    "authors": "Eric B. Zhou",
+    "status": "Data preparation",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "",
+    "links": [],
+    "sort_order": 3
+  },
+  {
+    "category": "works_in_progress",
+    "title": "The Creative Economy Under Permissive Versus Prohibitive AI Governance Regimes",
+    "authors": "Eric B. Zhou",
+    "status": "Data preparation",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "",
+    "links": [],
+    "sort_order": 4
+  },
+  {
+    "category": "works_in_progress",
+    "title": "Early-Stage Entrepreneurship",
+    "authors": "[A][CF]Gordon Scott, [CF]Chase Wiedemann, [CF]Eric B. Zhou",
+    "status": "Data exploration",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "",
+    "links": [],
+    "sort_order": 5
+  },
+  {
+    "category": "presentation_only",
+    "title": "Economic Value of Image-Based Seller Quality Signals",
+    "authors": "Eric B. Zhou, Xiang Hui, Dokyun Lee",
+    "conference_workshop_presentations": [
+      {
+        "month": "Dec.",
+        "year": "2022",
+        "conference": "Workshop on Information Systems and Economics (WISE)",
+        "location": "Copenhagen, Denmark",
+        "notes": "[b]Best Student Paper finalist[/b]"
+      }
+    ],
+    "sort_order": 4
+  }
+]

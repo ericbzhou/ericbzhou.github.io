@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Dokyun Lee",
+    "title": "Professor of Information Systems",
+    "department": "Questrom School of Business",
+    "school": "Boston University",
+    "email": "dokyun@bu.edu"
+  },
+  {
+    "name": "Gordon Burtch ",
+    "title": "Professor of Information Systems",
+    "department": "Questrom School of Business",
+    "school": "Boston University",
+    "email": "gburtch@bu.edu"
+  },
+  {
+    "name": "Bin Gu ",
+    "title": "Professor of Information Systems",
+    "department": "Questrom School of Business",
+    "school": "Boston University",
+    "email": "bgu@bu.edu"
+  },
+  {
+    "name": "Daniel Rock",
+    "title": "Assistant Professor of Operations, Information, and Decisions",
+    "department": "The Wharton School",
+    "school": "University of Pennsylvania",
+    "email": "rockdi@wharton.upenn.edu"
+  },
+  {
+    "name": "Prasanna Tambe ",
+    "title": "Professor of Operations, Information, and Decisions",
+    "department": "The Wharton School",
+    "school": "University of Pennsylvania",
+    "email": "tambe@wharton.upenn.edu"
+  }
+]

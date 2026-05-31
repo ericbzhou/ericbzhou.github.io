@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2021-05",
+    "description": "Graduated from <span class=\"red\">Carnegie Mellon University Tepper School of Business with a Master's of Business Administration </span>",
+    "sort_order": 1
+  },
+  {
+    "date": "2021-08",
+    "description": "Started <span class=\"red\">PhD at Washington University in St. Louis Olin Business School</span>",
+    "sort_order": 2
+  },
+  {
+    "date": "2022-12",
+    "description": "<span class=\"green\">WISE Best Student Paper Finalist </span>",
+    "sort_order": 3
+  },
+  {
+    "date": "2023-05",
+    "description": "Graduated from <span class=\"red\">Washington University in St. Louis with a Master's of Science in Business Administration</span>",
+    "sort_order": 4
+  },
+  {
+    "date": "2023-08",
+    "description": "Moved to <span class=\"red\">Boston University Questrom School of Business as a PhD Candidate in Information Systems</span>",
+    "sort_order": 5
+  },
+  {
+    "date": "2024-01",
+    "description": "<a href=\"https://academic.oup.com/pnasnexus/article/3/3/pgae052/7618478\" target=\"_blank\"><span class=\"blue\">Generative Artificial Intelligence, Human Creativity, and Art</span></a> forthcoming at Proceedings of the National Academy of Sciences Nexus.",
+    "sort_order": 6
+  },
+  {
+    "date": "2024-05",
+    "description": "Received <span class=\"green\">Marketing Science Institute research grant ($5,000)</span> (Co-PI).",
+    "sort_order": 7
+  },
+  {
+    "date": "2024-05",
+    "description": "Received <span class=\"green\">Questrom Outstanding Research Award</span>.",
+    "sort_order": 8
+  },
+  {
+    "date": "2025-07",
+    "description": "<a href=\"https://www.science.org/doi/10.1126/sciadv.adu5800\" target=\"_blank\"><span class=\"blue\">Who Expands the Human Creative Frontier with Generative AI?</span></a> forthcoming at Science Advances.",
+    "sort_order": 9
+  },
+  {
+    "date": "2025-11",
+    "description": "<span class=\"green\">MSI Alden G. Clayton Dissertation Competition honorable mention</span>",
+    "sort_order": 10
+  },
+  {
+    "date": "2025-12",
+    "description": "<span class=\"green\">WISE Best Student Paper runner-up</span>",
+    "sort_order": 11
+  }
+]

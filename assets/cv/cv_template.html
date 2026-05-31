@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ name }} — CV</title>
+  <style>
+    :root {
+      --font-family: "{{ font_family }}";
+      --color-text: {{ color_text|safe }};
+      --color-muted: {{ color_muted|safe }};
+      --color-heading: {{ color_heading|safe }};
+      --color-border: {{ color_border|safe }};
+      --color-link: {{ color_link|safe }};
+      --margin-top: {{ margin_top }}mm;
+      --margin-bottom: {{ margin_bottom }}mm;
+      --margin-left: {{ margin_left }}mm;
+      --margin-right: {{ margin_right }}mm;
+      --section-heading-border-width: {{ section_heading_border_width }}pt;
+      --border-width: 0.5pt;
+      --indent: {{ indent }}mm;
+      --item-gap: {{ item_gap }}pt;
+    }
+
+    @media print {
+      @page {
+        size: {{ page_format }} {{ page_orientation }};
+        margin: 0;
+        @bottom-center {
+          content: counter(page);
+          font-size: {{ personal_contact_size }}pt;
+          color: var(--color-muted);
+        }
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: #f0f0f0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv-container {
+      width: 210mm;
+      min-height: 277mm;
+      margin: 0 auto;
+      padding: var(--margin-top) var(--margin-left) var(--margin-bottom) var(--margin-right);
+      background: white;
+    }
+
+    @media screen {
+      .cv-container {
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        margin: 20px auto;
+      }
+    }
+
+    .section-heading {
+      font-size: {{ section_heading_size }}pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--color-heading);
+      border-bottom: var(--section-heading-border-width) solid var(--color-border);
+      padding-bottom: 3pt;
+      margin-top: 10pt;
+      margin-bottom: {{ section_heading_spacing_after }}pt;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .section-heading:first-child {
+      margin-top: 0;
+      page-break-before: avoid;
+      break-before: auto;
+    }
+
+    .section-heading:first-child {
+      margin-top: 0;
+      page-break-before: avoid;
+      break-before: avoid;
+    }
+
+    .sub-heading {
+      font-size: {{ sub_heading_size }}pt;
+      font-weight: bold;
+      color: var(--color-heading);
+      margin-top: 4pt;
+      margin-bottom: 2pt;
+      page-break-after: avoid;
+    }
+
+    .personal-name {
+      font-size: {{ personal_name_size }}pt;
+      font-weight: {{ personal_name_style }};
+      color: var(--color-heading);
+      line-height: 1.2;
+      text-align: center;
+      page-break-after: avoid;
+    }
+
+    .personal-contact {
+      font-size: {{ personal_contact_size }}pt;
+      font-weight: {{ personal_contact_style }};
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-top: 2pt;
+      text-align: center;
+      page-break-after: avoid;
+    }
+
+    .personal-contact .contact-item {
+      display: inline-block;
+      margin: 0 20pt;
+    }
+
+    .personal-contact a {
+      color: var(--color-link);
+      text-decoration: underline;
+    }
+
+    .personal-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .personal-notes {
+      font-size: {{ personal_notes_size }}pt;
+      font-weight: {{ personal_notes_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-top: 1pt;
+      text-align: center;
+      page-break-after: avoid;
+    }
+
+    .edu-block {
+      display: flex;
+      margin-bottom: 8pt;
+      page-break-inside: avoid;
+    }
+
+    .edu-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-date-col {
+      flex-shrink: 0;
+      border-right: var(--border-width) solid var(--color-border);
+      width: {{ border_width }}pt;
+      text-align: right;
+    }
+
+    .edu-date {
+      font-size: {{ education_school_size }}pt;
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .edu-date {
+      font-size: {{ education_school_size }}pt;
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .edu-content {
+      flex: 1;
+      padding-left: 8pt;
+    }
+
+    .edu-header {
+      display: flex;
+      align-items: baseline;
+      line-height: 1.3;
+    }
+
+    .edu-school {
+      font-size: {{ education_school_size }}pt;
+      font-weight: {{ education_school_style }};
+      flex: 1;
+      margin-right: 6pt;
+    }
+
+    .edu-location {
+      font-size: {{ education_school_size }}pt;
+      color: var(--color-text);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .edu-program {
+      font-size: {{ education_program_size }}pt;
+      font-weight: {{ education_program_style }};
+      font-style: {{ education_program_style }};
+      color: var(--color-text);
+      margin-top: 1pt;
+      margin-left: 14pt;
+    }
+
+    .edu-detail {
+      font-size: {{ education_detail_size }}pt;
+      font-weight: {{ education_detail_style }};
+      color: var(--color-muted);
+      margin-top: 1pt;
+      line-height: 1.3;
+      margin-left: 14pt;
+    }
+
+    .award-group {
+      margin-top: 4pt;
+      page-break-inside: avoid;
+    }
+
+    .award-group-body {
+      display: flex;
+      margin-top: 1pt;
+    }
+
+    .award-border-col {
+      flex-shrink: 0;
+      border-right: var(--border-width) solid var(--color-border);
+      width: {{ border_width }}pt;
+      text-align: right;
+      padding-right: 12pt;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+    }
+
+    .award-border-col .award-date {
+      font-size: {{ research_detail_size }}pt;
+      white-space: nowrap;
+      line-height: 1.3;
+      margin-bottom: 4pt;
+      text-align: right;
+    }
+
+    .award-border-col .award-date:last-child {
+      margin-bottom: 0;
+    }
+
+    .award-content-col {
+      flex: 1;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+      padding-left: 8pt;
+    }
+
+    .award-title {
+      font-size: {{ research_detail_size }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-bottom: 4pt;
+    }
+
+    .award-title:last-child {
+      margin-bottom: 0;
+    }
+
+    .industry-header {
+      display: flex;
+      align-items: baseline;
+      line-height: 1.3;
+    }
+
+    .industry-title {
+      font-size: {{ education_school_size }}pt;
+      font-weight: {{ education_school_style }};
+      flex: 1;
+      margin-right: 6pt;
+    }
+
+    .industry-location {
+      font-size: {{ education_school_size }}pt;
+      color: var(--color-text);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .industry-notes {
+      font-size: {{ education_detail_size }}pt;
+      font-weight: {{ education_detail_style }};
+      color: var(--color-muted);
+      margin-top: 1pt;
+      line-height: 1.3;
+    }
+
+    .research-title {
+      font-size: {{ research_title_size }}pt;
+      font-weight: {{ research_title_style }};
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+
+    .research-entry {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .research-number-col {
+      flex-shrink: 0;
+      width: 18pt;
+      text-align: right;
+      padding-right: 6pt;
+    }
+
+    .research-number {
+      font-weight: normal;
+      font-size: 10.5pt;
+    }
+
+    .research-content {
+      flex: 1;
+    }
+
+    .research-authors {
+      font-size: {{ research_authors_size }}pt;
+      font-weight: {{ research_authors_style }};
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .research-authors .underline-self {
+      text-decoration: underline;
+    }
+
+    .author-symbol {
+      font-size: 0.6em;
+      vertical-align: super;
+      line-height: 0;
+      color: var(--color-muted);
+      margin-left: 1pt;
+    }
+
+    .research-author-legend {
+      font-size: 8pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-bottom: 4pt;
+    }
+
+    .research-author-legend sup.author-note {
+      font-size: 0.7em;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .research-status {
+      font-size: {{ research_status_size }}pt;
+      font-weight: {{ research_status_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-top: 1pt;
+      margin-left: {{ research_detail_indent }}mm;
+    }
+
+    .research-detail {
+      font-size: {{ research_detail_size }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-left: {{ research_detail_indent }}mm;
+    }
+
+    .research-links {
+      font-size: {{ research_detail_size }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-left: {{ research_detail_indent }}mm;
+      margin-top: 2pt;
+    }
+
+    .research-links a {
+      color: var(--color-link);
+      text-decoration: underline;
+    }
+
+    .research-links a:hover {
+      text-decoration: underline;
+    }
+
+    .research-block {
+      margin-bottom: 6pt;
+      page-break-inside: avoid;
+    }
+
+    .research-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .talks-group {
+      margin-top: 4pt;
+      page-break-inside: avoid;
+    }
+
+    .talks-group-title {
+      font-size: {{ research_title_size }}pt;
+      font-weight: {{ research_title_style }};
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+
+    .talks-group-authors {
+      font-size: {{ research_authors_size }}pt;
+      font-weight: {{ research_authors_style }};
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .talks-group-authors .underline-self {
+      text-decoration: underline;
+    }
+
+    .talks-group-body {
+      display: flex;
+      margin-top: 1pt;
+    }
+
+    .talks-border-col {
+      flex-shrink: 0;
+      border-right: var(--border-width) solid var(--color-border);
+      width: {{ border_width }}pt;
+      text-align: right;
+      padding-right: 12pt;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+    }
+
+    .talks-border-col .talks-date {
+      font-size: {{ research_detail_size }}pt;
+      white-space: nowrap;
+      line-height: 1.3;
+      margin-bottom: 4pt;
+      text-align: right;
+    }
+
+    .talks-border-col .talks-date:last-child {
+      margin-bottom: 0;
+    }
+
+    .talks-content-col {
+      flex: 1;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+      padding-left: 8pt;
+    }
+
+    .talks-content-col .talks-venue {
+      font-size: {{ research_detail_size }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-bottom: 4pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .talks-content-col .talks-venue .venue-name {
+      flex: 1;
+    }
+
+    .talks-content-col .talks-venue .venue-location {
+      flex-shrink: 0;
+      margin-left: 12pt;
+      white-space: nowrap;
+    }
+
+    .talks-content-col .talks-venue sup.pres-note {
+      font-size: 0.7em;
+      vertical-align: super;
+      color: var(--color-muted);
+      line-height: 0;
+      margin-right: 2pt;
+    }
+
+    .talks-content-col .talks-venue:last-child {
+      margin-bottom: 0;
+    }
+
+    .conference-legend {
+      font-size: {{ (research_detail_size - 2) }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-top: 2pt;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+    }
+
+    .conference-legend sup.pres-note {
+      font-size: 0.7em;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .conference-unmatched-note {
+      font-size: {{ research_detail_size }}pt;
+      font-weight: {{ research_detail_style }};
+      color: var(--color-muted);
+      line-height: 1.3;
+      margin-top: 2pt;
+      margin-left: 8pt;
+      padding-top: 1pt;
+      padding-bottom: 1pt;
+    }
+
+    .talks-notes {
+      margin-left: 4pt;
+      color: var(--color-muted);
+    }
+
+    .research-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .dashed-entry {
+      font-size: {{ dashed_entry_size }}pt;
+      font-weight: {{ dashed_entry_style }};
+      color: var(--color-text);
+      line-height: 1.4;
+      margin-left: {{ indent }}mm;
+      margin-top: 2pt;
+      page-break-inside: avoid;
+    }
+
+    .dashed-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .reference-block {
+      margin-bottom: 6pt;
+    }
+
+    .reference-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      font-size: {{ skills_item_size }}pt;
+      color: var(--color-text);
+      line-height: 1.4;
+      margin-left: {{ indent }}mm;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: "*";
+      position: absolute;
+      left: -14pt;
+    }
+
+    .interest-group {
+      display: flex;
+      margin-top: 2pt;
+      margin-bottom: 6pt;
+      page-break-inside: avoid;
+    }
+
+    .interest-label-col {
+      flex-shrink: 0;
+      border-right: var(--border-width) solid var(--color-border);
+      width: {{ border_width }}pt;
+      text-align: right;
+    }
+
+    .interest-label {
+      font-size: {{ skills_item_size }}pt;
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .interest-label {
+      font-size: {{ skills_item_size }}pt;
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .interest-content-col {
+      flex: 1;
+      padding-left: 8pt;
+    }
+
+    .interest-text {
+      font-size: {{ skills_item_size }}pt;
+      color: var(--color-text);
+      line-height: 1.4;
+      margin-top: 2pt;
+    }
+
+    .interest-text:first-child {
+      margin-top: 0;
+    }
+
+    .skills-entry {
+      font-size: {{ skills_item_size }}pt;
+      color: var(--color-text);
+      line-height: 1.4;
+      margin-top: 4pt;
+      page-break-inside: avoid;
+    }
+
+    .skills-label {
+      font-weight: bold;
+      color: var(--color-heading);
+    }
+
+    .skills-label::after {
+      content: ": ";
+    }
+
+    .skills-group {
+      margin-top: 2pt;
+      margin-bottom: 6pt;
+    }
+
+    .skills-label {
+      font-size: {{ skills_item_size }}pt;
+      font-weight: bold;
+      color: var(--color-heading);
+    }
+
+    .skills-content {
+      font-size: {{ skills_item_size }}pt;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+
+    .ref-name {
+      font-size: {{ references_name_size }}pt;
+      font-weight: {{ references_name_style }};
+      color: var(--color-text);
+      margin-left: {{ indent }}mm;
+      line-height: 1.3;
+    }
+
+    .ref-title {
+      font-size: {{ references_detail_size }}pt;
+      font-weight: {{ references_detail_style }};
+      color: var(--color-text);
+      margin-left: {{ indent }}mm;
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .ref-dept {
+      font-size: {{ references_detail_size }}pt;
+      font-weight: {{ references_detail_style }};
+      color: var(--color-muted);
+      margin-left: {{ indent }}mm;
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .ref-email {
+      font-size: {{ references_email_size }}pt;
+      font-weight: {{ references_email_style }};
+      color: var(--color-text);
+      margin-left: {{ indent }}mm;
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .ref-email a {
+      color: var(--color-link);
+      text-decoration: underline;
+    }
+
+    .ref-email a:hover {
+      text-decoration: underline;
+    }
+
+    .ref-email a:hover {
+      text-decoration: underline;
+    }
+
+    .ref-block {
+      margin-bottom: 8pt;
+      page-break-inside: avoid;
+    }
+
+    .ref-block:last-child {
+      margin-bottom: 0;
+    }
+
+    @media print {
+      body { background: white; }
+      .cv-container { box-shadow: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="cv-container">
+
+  {% if personal %}
+  <div class="personal-name">{{ personal.full_name|safe }}</div>
+  {% if personal.contact_items %}
+  <div class="personal-contact">{{ personal.contact_items | join(" | ") | safe }}</div>
+  {% endif %}
+  {% for note in personal.notes %}
+  <div class="personal-notes">{{ note|safe }}</div>
+  {% endfor %}
+  {% endif %}
+
+  {% for section in sections %}
+  {% if section.type == "heading" %}
+  <div class="section-heading">{{ section.title }}</div>
+  {% elif section.type == "sub_heading" %}
+  <div class="sub-heading">{{ section.title }}</div>
+  {% elif section.type == "education" %}
+  {% for item in section.data %}
+  <div class="edu-block">
+    <div class="edu-date-col">
+      <span class="edu-date">{{ item.year_start }} - {{ item.year_end }}</span>
+    </div>
+    <div class="edu-content">
+    <div class="edu-header">
+      <span class="edu-school">{{ item.school|safe }}</span>
+      {% if item.location %}
+      <span class="edu-location">{{ item.location|safe }}</span>
+      {% endif %}
+    </div>
+    <div class="edu-program">{{ item.program|safe }}</div>
+    {% if item.advisor %}
+    <div class="edu-detail">Advised by {{ item.advisor|safe }}</div>
+    {% endif %}
+    {% for note in item.notes %}
+    <div class="edu-detail">{{ note|safe }}</div>
+    {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  {% elif section.type == "teaching" %}
+  {% for item in section.data %}
+  <div class="edu-block">
+    <div class="edu-date-col">
+      <span class="edu-date">{{ item.date }}</span>
+    </div>
+    <div class="edu-content">
+    <div class="edu-header">
+      <span class="edu-school">{{ item.course|safe }}</span>
+    </div>
+    <div class="edu-program">{{ item.role|safe }}</div>
+    {% if item.rating %}
+    <div class="edu-detail">Rating: {{ item.rating|safe }}</div>
+    {% endif %}
+    {% for note in item.notes %}
+    <div class="edu-detail">{{ note|safe }}</div>
+    {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  {% elif section.type == "awards" %}
+  <div class="award-group">
+    <div class="award-group-body">
+      <div class="award-border-col">
+        {% for item in section.data %}
+        <div class="award-date">{{ item.date }}</div>
+        {% endfor %}
+      </div>
+      <div class="award-content-col">
+        {% for item in section.data %}
+        <div class="award-title">{{ item.title|safe }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% elif section.type == "research_legend" %}
+  <div class="research-author-legend">{{ section.data.legend|safe }}</div>
+  {% elif section.type == "research" %}
+  {% for entry in section.data %}
+  <div class="research-block">
+  <div class="research-entry">
+    <div class="research-number-col"><span class="research-number">{{ entry["number"] }}.</span></div>
+    <div class="research-content">
+    <div class="research-title">"{{ entry["title"]|safe }}"</div>
+    <div class="research-authors">{{ entry["authors_html"]|safe }}</div>
+    {% if entry["status"] %}
+    <div class="research-status">{{ entry["status"]|safe }}</div>
+    {% endif %}
+    {% for note in entry["notes"] %}
+    <div class="research-detail">{{ note|safe }}</div>
+    {% endfor %}
+    {% if entry["links"] %}
+    <div class="research-links">
+      {% for link in entry["links"] %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>{% if not loop.last %} | {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+  {% elif section.type == "invited_talks_group" %}
+  <div class="talks-group">
+    <div class="talks-group-title">{{ section.data.title|safe }}</div>
+    <div class="talks-group-authors">{{ section.data.authors|safe }}</div>
+    <div class="talks-group-body">
+      <div class="talks-border-col">
+        {% for talk in section.data.talks %}
+        <div class="talks-date">{{ talk.date }}</div>
+        {% endfor %}
+      </div>
+      <div class="talks-content-col">
+        {% for talk in section.data.talks %}
+        <div class="talks-venue">{{ talk.venue|safe }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% elif section.type == "conference_legend" %}
+  <div class="conference-legend">{{ section.data.legend|safe }}</div>
+  {% elif section.type == "conference_pres_group" %}
+  <div class="talks-group">
+    <div class="talks-group-title">{{ section.data.title|safe }}</div>
+    <div class="talks-group-authors">{{ section.data.authors|safe }}</div>
+    <div class="talks-group-body">
+      <div class="talks-border-col">
+        {% for pres in section.data.pres %}
+        <div class="talks-date">{{ pres.date }}</div>
+        {% endfor %}
+      </div>
+      <div class="talks-content-col">
+        {% for pres in section.data.pres %}
+        <div class="talks-venue">
+          <span class="venue-name">{{ pres.conference|safe }}</span>
+          {% if pres.location %}<span class="venue-location">{{ pres.location }}</span>{% endif %}
+        </div>
+        {% if pres.unmatched_notes %}
+        {% for note in pres.unmatched_notes %}
+        <div class="conference-unmatched-note">{{ note|safe }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% elif section.type == "industry" %}
+  <div class="edu-block">
+    <div class="edu-date-col">
+      <span class="edu-date">{{ section.data.year_start }} - {{ section.data.year_end }}</span>
+    </div>
+    <div class="edu-content">
+    <div class="industry-header">
+      <span class="industry-title">{{ section.data.organization|safe }}</span>
+      {% if section.data.location %}
+      <span class="industry-location">{{ section.data.location|safe }}</span>
+      {% endif %}
+    </div>
+    <div class="edu-program">{{ section.data.title|safe }}</div>
+    {% if section.data.notes %}
+    <ul class="bullet-list">
+    {% for note in section.data.notes %}
+      <li>{{ note|safe }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+  </div>
+  {% elif section.type == "bullet_list" %}
+  <ul class="bullet-list">
+  {% for item in section.data %}
+    <li>{{ item|safe }}</li>
+  {% endfor %}
+  </ul>
+  {% elif section.type == "research_interests" %}
+  <div class="interest-group">
+    <div class="interest-label-col">
+      <span class="interest-label">{{ section.label }}</span>
+    </div>
+    <div class="interest-content-col">
+    {% for entry in section.data %}
+      <div class="interest-text">{{ entry.item }}</div>
+    {% endfor %}
+    </div>
+  </div>
+  {% elif section.type == "professional_service" %}
+  <div class="interest-group">
+    <div class="interest-label-col">
+      <span class="interest-label">{{ section.label }}</span>
+    </div>
+    <div class="interest-content-col">
+    {% for entry in section.data %}
+      <div class="interest-text">{{ entry.item }}</div>
+    {% endfor %}
+    </div>
+  </div>
+  {% elif section.type == "skills" %}
+  <div class="skills-entry">
+    <span class="skills-label">{{ section.label }}</span>
+    <span class="skills-content">{{ section.data }}</span>
+  </div>
+  {% elif section.type == "dashed_entry" %}
+  <div class="dashed-entry">
+    {% if section.date %}<span class="dashed-date">{{ section.date }}</span><span class="dashed-separator"> -- </span>{% endif %}
+    <span class="dashed-content">{{ section.content|safe }}</span>
+  </div>
+  {% elif section.type == "reference" %}
+  <div class="ref-block">
+    <div class="ref-name">{{ section.data.name|safe }}</div>
+    {% if section.data.title %}
+    <div class="ref-title">{{ section.data.title|safe }}</div>
+    {% endif %}
+    {% if section.data.department or section.data.school %}
+    <div class="ref-dept">{{ section.data.department|safe }}{% if section.data.department and section.data.school %}, {% endif %}{{ section.data.school|safe }}</div>
+    {% endif %}
+    {% if section.data.email %}
+    <div class="ref-email"><a href="mailto:{{ section.data.email }}" target="_blank" rel="noopener noreferrer">{{ section.data.email }}</a></div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+
+</div>
+</body>
+</html>

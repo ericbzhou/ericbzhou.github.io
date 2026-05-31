@@ -1,0 +1,96 @@
+# CV Style Configuration
+# Edit this file to change the appearance of your CV PDF.
+# All visual parameters are centralized here.
+
+page:
+  format: "letter"
+  orientation: "portrait"
+  margins:
+    top: 12.7
+    bottom: 12.7
+    left: 12.7
+    right: 12.7
+
+fonts:
+  family: "Segoe UI"
+
+colors:
+  text: [26, 26, 26] # RGB
+  muted: [51, 51, 51]
+  heading: [200, 26, 26]
+  border: [26, 26, 26]
+  link: [0, 55, 120]
+
+personal:
+  name:
+    style: "B"
+    size: 16
+  contact:
+    style: ""
+    size: 10
+  notes:
+    style: ""
+    size: 10
+
+section_heading:
+  style: "B"
+  size: 14
+  border_width: 0.8
+  spacing_after: 5
+
+sub_heading:
+  style: "B"
+  size: 12
+  spacing_after: 3
+
+education:
+  school:
+    style: "B"
+    size: 10
+  program:
+    style: "I"
+    size: 10
+  detail:
+    style: ""
+    size: 10
+    indent: 3
+
+research:
+  title:
+    style: "B"
+    size: 10
+  authors:
+    style: "I"
+    size: 10
+  status:
+    style: ""
+    size: 10
+  detail:
+    style: ""
+    size: 10
+    indent: 7
+
+skills:
+  item_size: 10
+
+references:
+  name:
+    style: "B"
+    size: 10
+  detail:
+    style: ""
+    size: 10
+  email:
+    style: ""
+    size: 10
+
+dashed_entry:
+  size: 10
+  style: ""
+
+indent: 7
+item_gap: 5
+
+presentation_notes:
+  "1": "Invited speaker"
+  "2": "Accepted but did not attend"
