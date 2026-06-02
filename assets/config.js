@@ -85,8 +85,7 @@ window.SITE_CONFIG = {
 
   // CV page
   cv: {
-    cvHtmlPath: 'cv/cv.html',
-    showPrintLink: true
+    cvHtmlPath: 'cv/cv.html'
   },
 
   // SEO
