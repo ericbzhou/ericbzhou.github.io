@@ -1,81 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <script>
-        (function () {
-            try {
-                var t = localStorage.getItem("theme");
-                if (t === "dark")
-                    document.documentElement.classList.add("dark");
-            } catch (e) {}
-        })();
-    </script>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <!-- Per-page SEO meta tags -->
-        <meta
-            name="description"
-            content="Eric B. Zhou — Academic researcher studying the creative economy, AI policy, and data governance"
-        />
-        <meta property="og:title" content="Eric B. Zhou — Home" />
-        <meta
-            property="og:description"
-            content="Eric B. Zhou — Academic researcher studying the creative economy, AI policy, and data governance"
-        />
-        <meta property="og:image" content="assets/headshots/2.png" />
-        <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://ericbzhou.github.io/" />
-        <link rel="canonical" href="https://ericbzhou.github.io/" />
-        <link rel="stylesheet" href="assets/styles.css" />
-        <link
-            rel="stylesheet"
-            href="assets/academicons/css/academicons.min.css"
-        />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="assets/favicon_io/favicon.ico"
-        />
-        <title>Eric B. Zhou — Home</title>
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Eric B. Zhou",
-                "url": "https://ericbzhou.github.io",
-                "jobTitle": "PhD Candidate in Information Systems",
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "Boston University Questrom School of Business"
-                },
-                "alumniOf": [
-                    {
-                        "@type": "CollegeOrUniversity",
-                        "name": "Washington University in St. Louis"
-                    },
-                    {
-                        "@type": "CollegeOrUniversity",
-                        "name": "Carnegie Mellon University"
-                    },
-                    {
-                        "@type": "CollegeOrUniversity",
-                        "name": "Washington University in St. Louis"
-                    }
-                ],
-                "sameAs": [
-                    "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
-                    "https://orcid.org/0009-0001-0540-8852",
-                    "https://www.linkedin.com/in/ericbzhou/"
-                ]
-            }
-        </script>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script src="assets/config.js"></script>
-        <script src="assets/renderer.js"></script>
-        <script src="assets/pages/home.js"></script>
-    </body>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Per-page SEO meta tags -->
+  <meta name="description" content="Eric B. Zhou — PhD Candidate in Information Systems at Boston University Questrom School of Business">
+  <meta property="og:title" content="Eric B. Zhou — Home">
+  <meta property="og:description" content="Eric B. Zhou — PhD Candidate in Information Systems at Boston University Questrom School of Business">
+  <meta property="og:image" content="assets/headshots/2.png">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://ericbzhou.github.io/">
+  <link rel="canonical" href="https://ericbzhou.github.io/">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/academicons/css/academicons.min.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+  <title>Eric B. Zhou — Home</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Eric B. Zhou",
+  "url": "https://ericbzhou.github.io",
+  "jobTitle": "PhD Candidate in Information Systems",
+  "worksFor": { "@type": "Organization", "name": "Boston University Questrom School of Business" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Washington University in St. Louis" },
+    { "@type": "CollegeOrUniversity", "name": "Carnegie Mellon University" },
+    { "@type": "CollegeOrUniversity", "name": "Washington University in St. Louis" }
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=gP3giFAAAAAJ&hl=en",
+    "https://orcid.org/0009-0001-0540-8852",
+    "https://www.linkedin.com/in/ericbzhou/"
+  ]
+}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="assets/config.js"></script>
+  <script src="assets/renderer.js"></script>
+  <script src="assets/pages/home.js"></script>
+</body>
 </html>

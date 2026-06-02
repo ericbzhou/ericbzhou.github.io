@@ -356,13 +356,14 @@ main {
     display: none;
 }
 
-/* Individual gallery items: consistent dimensions, hover-expand */
+/* Individual gallery items: fixed dimensions, cropped to fill. */
 .gallery-item {
     flex-shrink: 0;
     width: 220px;
     height: 165px;
+    display: block;
+    object-fit: cover;
     border-radius: var(--border-radius);
-    overflow: hidden;
     box-shadow: var(--shadow-card);
     transition:
         box-shadow var(--transition-normal),
@@ -376,29 +377,15 @@ main {
     z-index: 2;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform var(--transition-normal);
-    pointer-events: none;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
 /* Seamless infinite scroll animation */
 @keyframes galleryScroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        /* Scrolls by half the track width (the duplicated set).
-       Calculated as: num_images * (image_width + gap).
-       With 5 images at 220px + 16px gap = 1180px per set. */
-        transform: translateX(-1180px);
+        /* Scrolls by the total width of one image set.
+        Set dynamically via --scroll-distance CSS custom property. */
+        transform: translateX(var(--scroll-distance, -1180px));
     }
 }
 
@@ -869,20 +856,10 @@ html:not(.dark-loaded) {
     .container {
         padding: var(--spacing-md) var(--spacing-md);
     }
-
-    .gallery-item {
-        width: 200px;
-        height: 150px;
-    }
 }
 
 /* --- Tablet (>= 768px): adjusted grid, nav horizontal --- */
 @media (max-width: 991px) and (min-width: 768px) {
-    .gallery-item {
-        width: 180px;
-        height: 135px;
-    }
-
     .profile-header {
         gap: var(--spacing-lg);
     }
@@ -973,10 +950,6 @@ html:not(.dark-loaded) {
     }
 
     /* Horizontal scrolling gallery on mobile */
-    .gallery-item {
-        width: 160px;
-        height: 120px;
-    }
 
     /* Card padding reduction */
     .card {
@@ -1016,15 +989,9 @@ html:not(.dark-loaded) {
 }
 
 /* --- Small mobile (< 480px) --- */
-@media (max-width: 479px) {
-    .gallery-item {
-        width: 140px;
-        height: 105px;
-    }
 
-    .profile-name {
-        font-size: 1.4rem;
-    }
+/* --------------------------------------------------------------------------
+   Utility Classes
 
     .profile-contact {
         flex-direction: column;
@@ -1223,12 +1190,18 @@ html:not(.dark-loaded) {
     }
 }
 
-.profile-photo {
+/* Cross-fade animation only when there are multiple photos (has-secondary class present) */
+.profile-photo-ctn.has-secondary .profile-photo {
     animation: photoA 10s ease-in-out infinite;
 }
 
-.profile-photo-secondary {
+.profile-photo-ctn.has-secondary .profile-photo-secondary {
     animation: photoB 10s ease-in-out infinite;
+}
+
+/* Single photo: no animation (the .profile-photo class is present but animation is not applied) */
+.profile-photo-ctn.single-photo .profile-photo {
+    animation: none;
 }
 
 .profile-photo-ctn {
@@ -1387,35 +1360,8 @@ details.accordion summary {
 }
 
 /* ==========================================================================
-   T16 — CV Print Button Styles
-   ========================================================================== */
-
-.cv-actions {
-    text-align: center;
-    margin: var(--spacing-lg) 0;
-}
-
-.print-btn {
-    display: inline-block;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--color-heading);
-    color: var(--color-bg);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: var(--font-size-body);
-    min-width: 44px;
-    min-height: 44px;
-    transition: opacity var(--transition-fast);
-}
-
-.print-btn:hover {
-    opacity: 0.85;
-}
-
-/* ==========================================================================
-   T17 — Responsive Design: Missing Base Styles & Responsive Rules
-   ========================================================================== */
+    T17 — Responsive Design: Missing Base Styles & Responsive Rules
+    ========================================================================== */
 
 /* --- Base styles for renderer-generated classes (not covered by T02/T07) --- */
 
@@ -2061,10 +2007,6 @@ details.accordion summary {
     }
 
     /* Horizontal scrolling gallery on renderer pages */
-    .gallery-item {
-        width: 170px;
-        height: 128px;
-    }
 
     /* Card padding reduction */
     .card {
@@ -2142,13 +2084,8 @@ details.accordion summary {
     }
 }
 
-/* Small mobile (< 480px): smaller gallery items */
+/* Small mobile (< 480px) */
 @media (max-width: 479px) {
-    .gallery-item {
-        width: 140px;
-        height: 105px;
-    }
-
     .profile-name {
         font-size: 1.4rem;
     }

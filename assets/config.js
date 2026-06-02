@@ -44,10 +44,16 @@ window.SITE_CONFIG = {
 
   // Profile
   profile: {
+    // Support both old single-image format AND new array format
+    // Old format (backwards compatible):
     photoPrimary: '2.png',
     photoSecondary: '1.jpg',
+    // New array format (preferred):
+    photos: ['2.png', '1.jpg'],  // array of photo filenames
     photoPath: 'assets/headshots/',
-    showGallery: true
+    // Gallery images - array of filenames (empty = no gallery)
+    galleryImages: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg']
+    // showGallery defaults to true; set to false to hide gallery section
   },
 
   // Research page

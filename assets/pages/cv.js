@@ -1,6 +1,6 @@
 /**
  * cv.js — CV page renderer.
- * Renders the profile header banner + embedded CV iframe + print button.
+ * Renders the profile header banner + embedded CV iframe.
  */
 
 (function() {
@@ -53,22 +53,7 @@
       cvContainer.appendChild(iframe);
       cvSection.appendChild(cvContainer);
 
-      // Print button
-      var actionsDiv = document.createElement('div');
-      actionsDiv.className = 'cv-actions';
-      var printBtn = document.createElement('button');
-      printBtn.id = 'print-cv-btn';
-      printBtn.className = 'print-btn';
-      printBtn.textContent = 'Print CV as PDF';
-      printBtn.addEventListener('click', function() {
-        iframe.contentWindow.print();
-      });
-      actionsDiv.appendChild(printBtn);
-      cvSection.appendChild(actionsDiv);
-
       app.appendChild(cvSection);
-
-      // 4. Footer
       app.appendChild(window.renderer.renderFooter(cfg));
 
     }).catch(function(err) {

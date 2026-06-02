@@ -47,15 +47,20 @@
         }
 
         // 4. Photo gallery
-        if (cfg.profile.showGallery) {
-          var gallerySection = document.createElement('section');
-          gallerySection.className = 'gallery-section';
-          var galleryHeading = window.renderer.renderSectionHeading('Gallery');
-          gallerySection.appendChild(galleryHeading);
+        if (cfg.profile.showGallery !== false) {
+          var galleryImages = cfg.profile.galleryImages || [];
+          if (galleryImages.length > 0) {
+            var gallerySection = document.createElement('section');
+            gallerySection.className = 'gallery-section';
+            var galleryHeading = window.renderer.renderSectionHeading('Gallery');
+            gallerySection.appendChild(galleryHeading);
 
-          var gallery = window.renderer.renderGallery(['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'], cfg.profile);
-          gallerySection.appendChild(gallery);
-          app.appendChild(gallerySection);
+            var gallery = window.renderer.renderGallery(galleryImages, cfg.profile);
+            if (gallery) {
+              gallerySection.appendChild(gallery);
+              app.appendChild(gallerySection);
+            }
+          }
         }
 
         // 5. Divider before news

@@ -162,9 +162,7 @@
             fn.innerHTML =
               "<sup>†</sup> First author" +
               " | <sup>‡</sup> Co-first author" +
-              " | <sup>§</sup> Alphabetical order" +
-              " | <sup>¶</sup> Accepted but did not attend" +
-              " | <sup>‖</sup> Invited speaker";
+              " | <sup>§</sup> Alphabetical order";
             app.appendChild(fn);
           }
           renderer.fetchJSON("data/awards.json").then(function (ad) {
@@ -454,12 +452,19 @@
         topRow.appendChild(locSpan);
       }
       row.appendChild(topRow);
-      // Bottom row (if notes exist): notes/flag symbols
+      // Bottom row (if notes exist): only show notes that are NOT [1] or [2]
       if (item.notes) {
-        notesLine = document.createElement("div");
-        notesLine.className = "presentation-notes";
-        notesLine.innerHTML = formatPresentationNotes(formatText(item.notes));
-        row.appendChild(notesLine);
+        // Strip [1] and [2] presentation markers, then format remaining text
+        var cleanNotes = formatText(item.notes);
+        cleanNotes = cleanNotes.replace(/\[1\]/g, "").replace(/\[2\]/g, "");
+        // Trim whitespace — if nothing left, don't render
+        cleanNotes = cleanNotes.replace(/\s+/g, " ").trim();
+        if (cleanNotes.length > 0) {
+          notesLine = document.createElement("div");
+          notesLine.className = "presentation-notes";
+          notesLine.innerHTML = cleanNotes;
+          row.appendChild(notesLine);
+        }
       }
       table.appendChild(row);
     }

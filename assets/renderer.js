@@ -161,28 +161,47 @@
     var header = createElement('div', { className: 'profile-header' });
     var container = createElement('div', { className: 'container' });
 
-    // Photo container (dual photo rotation)
-    var photoCtn = createElement('div', { className: 'profile-photo-ctn' });
-    var photo = createElement('img', {
-      className: 'profile-photo',
-      src: profileConfig.photoPath + profileConfig.photoPrimary,
-      alt: profileData.name + ' photo',
-      width: 180,
-      height: 180
-    });
-    photoCtn.appendChild(photo);
+    // Resolve photos array: prefer new format, fall back to old format
+    var photos;
+    if (profileConfig.photos && Array.isArray(profileConfig.photos) && profileConfig.photos.length > 0) {
+      photos = profileConfig.photos;
+    } else {
+      photos = [];
+      if (profileConfig.photoPrimary) photos.push(profileConfig.photoPrimary);
+      if (profileConfig.photoSecondary) photos.push(profileConfig.photoSecondary);
+    }
 
-    // Secondary photo (for rotation animation)
-    var photo2 = createElement('img', {
-      className: 'profile-photo profile-photo-secondary',
-      src: profileConfig.photoPath + profileConfig.photoSecondary,
-      alt: profileData.name + ' photo 2',
-      width: 180,
-      height: 180
-    });
-    photoCtn.appendChild(photo2);
+    // Photo container — handle 0, 1, or 2+ photos
+    if (photos.length > 0) {
+      var photoCtn = createElement('div', {
+        className: 'profile-photo-ctn' + (photos.length >= 2 ? ' has-secondary' : ' single-photo')
+      });
 
-    container.appendChild(photoCtn);
+      // Primary photo
+      var photo = createElement('img', {
+        className: 'profile-photo',
+        src: profileConfig.photoPath + photos[0],
+        alt: profileData.name + ' photo',
+        width: 180,
+        height: 180
+      });
+      photoCtn.appendChild(photo);
+
+      // Secondary photo (for rotation animation, only when 2+ photos)
+      if (photos.length >= 2) {
+        var photo2 = createElement('img', {
+          className: 'profile-photo profile-photo-secondary',
+          src: profileConfig.photoPath + photos[1],
+          alt: profileData.name + ' photo 2',
+          width: 180,
+          height: 180
+        });
+        photoCtn.appendChild(photo2);
+      }
+
+      container.appendChild(photoCtn);
+    }
+    // When photos.length === 0, skip the photo container entirely
 
     // Info section
     var info = createElement('div', { className: 'profile-info' });
@@ -346,6 +365,9 @@
 
   // ─── Gallery (horizontal auto-scroll) ─────────────────────────
   function renderGallery(images, profileConfig) {
+    // Return null for empty image arrays — caller should skip rendering
+    if (!images || images.length === 0) return null;
+
     var gallery = createElement('div', { className: 'gallery' });
     var grid = createElement('div', { className: 'gallery-grid' });
     var i;
@@ -363,6 +385,25 @@
       grid.appendChild(img);
     }
     gallery.appendChild(grid);
+
+    // Calculate scroll distance after paint so offsetWidth is accurate.
+    // Measure total width of one set (first half of items), add gaps,
+    // and set as CSS custom property for the animation keyframes.
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        var halfCount = images.length;
+        var totalWidth = 0;
+        for (i = 0; i < halfCount; i++) {
+          var item = grid.children[i];
+          if (item) {
+            totalWidth += item.offsetWidth;
+          }
+        }
+        // Add gaps between items (gap = 16px = var(--spacing-md))
+        totalWidth += (halfCount - 1) * 16;
+        gallery.style.setProperty('--scroll-distance', '-' + totalWidth + 'px');
+      });
+    });
 
     return gallery;
   }
