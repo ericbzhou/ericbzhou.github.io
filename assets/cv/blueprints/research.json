@@ -3,7 +3,7 @@
     "category": "working_drafts",
     "title": "Creative Labor and Responses to Generative AI Disruption & Data Governance",
     "authors": "[FA]Eric B. Zhou, Dokyun Lee, Gordon Burtch, Daniel Rock, Prasanna Tambe",
-    "status": "Preparing for submission",
+    "status": "Preparing for submission to [i]Management Science[/i]",
     "notes": "[b]Workshop on Information Systems and Economics (WISE) 2025 Best Student Paper runner-up[/b]",
     "sort_order": 1,
     "invited_talks": [
@@ -289,7 +289,15 @@
     "category": "presentation_only",
     "title": "OpenAI Forum: Economic Research on the Creative Economy",
     "authors": "Eric B. Zhou",
-    "conference_workshop_presentations": [],
+    "conference_workshop_presentations": [
+      {
+        "month": "Jul.",
+        "year": "2026",
+        "conference": "OpenAI",
+        "location": "Virtual",
+        "notes": ""
+      }
+    ],
     "sort_order": 2
   }
 ]
