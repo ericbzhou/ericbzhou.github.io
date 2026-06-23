@@ -1,7 +1,7 @@
 [
   {
     "category": "working_drafts",
-    "title": "Generative AI and Creative Markets: Supply-side Responses to AI Disruption & Data Governance",
+    "title": "Creative Labor and Responses to Generative AI Disruption & Data Governance",
     "authors": "[FA]Eric B. Zhou, Dokyun Lee, Gordon Burtch, Daniel Rock, Prasanna Tambe",
     "status": "Preparing for submission to [i]Management Science[/i]",
     "notes": "[b]Workshop on Information Systems and Economics (WISE) 2025 Best Student Paper runner-up[/b]",
@@ -224,7 +224,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 1
+    "sort_order": 5
   },
   {
     "category": "works_in_progress",
@@ -246,7 +246,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 3
+    "sort_order": 4
   },
   {
     "category": "works_in_progress",
@@ -257,7 +257,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 4
+    "sort_order": 3
   },
   {
     "category": "works_in_progress",
@@ -268,7 +268,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 5
+    "sort_order": 1
   },
   {
     "category": "presentation_only",
@@ -283,6 +283,21 @@
         "notes": "[b]Best Student Paper finalist[/b]"
       }
     ],
-    "sort_order": 4
+    "sort_order": 1
+  },
+  {
+    "category": "presentation_only",
+    "title": "OpenAI Forum: Economic Research on the Creative Economy",
+    "authors": "Eric B. Zhou",
+    "conference_workshop_presentations": [
+      {
+        "month": "Jul.",
+        "year": "2026",
+        "conference": "OpenAI",
+        "location": "Virtual",
+        "notes": ""
+      }
+    ],
+    "sort_order": 2
   }
 ]
