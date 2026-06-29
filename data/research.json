@@ -289,13 +289,11 @@
     "category": "presentation_only",
     "title": "OpenAI Forum: Economic Research on the Creative Economy",
     "authors": "Eric B. Zhou",
-    "conference_workshop_presentations": [
+    "invited_talks": [
       {
         "month": "Jul.",
         "year": "2026",
-        "conference": "OpenAI",
-        "location": "Virtual",
-        "notes": ""
+        "venue": "OpenAI (virtual)"
       }
     ],
     "sort_order": 2

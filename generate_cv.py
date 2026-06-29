@@ -23,10 +23,10 @@ from jinja2 import Environment, FileSystemLoader
 # Resolve paths
 # ---------------------------------------------------------------------------
 SCRIPT_DIR = Path(__file__).resolve().parent
-BLUEPRINTS_DIR = SCRIPT_DIR / "blueprints"
-OUTPUT_PATH = SCRIPT_DIR / "cv.html"
-STYLE_PATH = SCRIPT_DIR / "cv_style.yaml"
-TEMPLATE_PATH = SCRIPT_DIR / "cv_template.html"
+BLUEPRINTS_DIR = SCRIPT_DIR / "data"
+OUTPUT_PATH = SCRIPT_DIR / "assets/cv/cv.html"
+STYLE_PATH = SCRIPT_DIR / "assets/cv/cv_style.yaml"
+TEMPLATE_PATH = SCRIPT_DIR / "assets/cv/cv_template.html"
 
 USER_NAME_PLACEHOLDER = "Eric B. Zhou"
 

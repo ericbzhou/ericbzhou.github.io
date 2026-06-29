@@ -1,0 +1,23 @@
+{
+  "econometrics & statistics": [
+    "causal inference (DID, RDD, experimental design)"
+  ],
+  "machine learning & AI": [
+    "Large Language Models (LLMs)",
+    "agentic harness",
+    "local LLM",
+    "computer vision",
+    "multimodal feature extraction",
+    "agentic systems",
+    "PyTorch"
+  ],
+  "programming & tools": [
+    "Python",
+    "Hugging Face",
+    "web scraping",
+    "SQL",
+    "Linux",
+    "Git",
+    "LaTeX"
+  ]
+}

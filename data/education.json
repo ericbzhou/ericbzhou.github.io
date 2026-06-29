@@ -1,0 +1,38 @@
+[
+  {
+    "year_start": "2023",
+    "year_end": "2026",
+    "location": "Boston, MA",
+    "school": "Boston University, Questrom School of Business",
+    "program": "Doctor of Philosophy in Information Systems",
+    "advisor": "Dokyun Lee",
+    "notes": [
+      "Dissertation: \"Human Creativity & Creative Markets in the Age of Generative AI\"",
+      "[b]MSI Alden G. Clayton Dissertation Competition honorable mention[/b]"
+    ]
+  },
+  {
+    "year_start": "2021",
+    "year_end": "2023",
+    "location": "St. Louis, MO",
+    "school": "Washington University in St. Louis, Olin Business School",
+    "program": "Doctoral Student, awarded Master of Science in Business Administration",
+    "notes": ["*Transferred to Boston University"]
+  },
+  {
+    "year_start": "2021",
+    "year_end": "2023",
+    "location": "Pittsburgh, PA",
+    "school": "Carnegie Mellon University, Tepper School of Business",
+    "program": "Master of Business Administration",
+    "notes": ["Business Analytics track"]
+  },
+  {
+    "year_start": "2014",
+    "year_end": "2018",
+    "location": "St. Louis, MO",
+    "school": "Washington University in St. Louis",
+    "program": "Bachelor of Science in Business Administration",
+    "notes": ["Majors: Finance and Marketing"]
+  }
+]
