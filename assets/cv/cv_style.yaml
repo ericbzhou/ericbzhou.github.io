@@ -17,7 +17,7 @@ fonts:
 colors:
   text: [26, 26, 26] # RGB
   muted: [51, 51, 51]
-  heading: [200, 26, 26]
+  heading: [2, 108, 181]
   border: [26, 26, 26]
   link: [0, 55, 120]
 

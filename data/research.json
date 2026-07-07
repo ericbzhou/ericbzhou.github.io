@@ -1,11 +1,11 @@
 [
   {
     "category": "working_drafts",
-    "title": "Creative Labor and Responses to Generative AI Disruption & Data Governance",
+    "title": "Creative Labor, Generative AI Disruption, & Data Governance",
     "authors": "[FA]Eric B. Zhou, Dokyun Lee, Gordon Burtch, Daniel Rock, Prasanna Tambe",
     "status": "Preparing for submission to [i]Management Science[/i]",
     "notes": "[b]Workshop on Information Systems and Economics (WISE) 2025 Best Student Paper runner-up[/b]",
-    "sort_order": 1,
+    "sort_order": 2,
     "invited_talks": [
       {
         "month": "Nov.",
@@ -111,7 +111,7 @@
     "title": "Who Expands the Human Creative Frontier with Generative AI?",
     "authors": "[FA]Eric B. Zhou, Dokyun Lee, Bin Gu",
     "status": "Published in [i]Science Advances[/i] (September 2025)",
-    "sort_order": 2,
+    "sort_order": 3,
     "invited_talks": [
       {
         "month": "Jul.",
@@ -176,7 +176,7 @@
     "title": "Generative Artificial Intelligence, Human Creativity, and Art",
     "authors": "[FA]Eric B. Zhou, Dokyun Lee",
     "status": "Published in [i]Proceedings of the National Academy of Sciences Nexus[/i] (March 2024)",
-    "sort_order": 3,
+    "sort_order": 4,
     "invited_talks": [
       {
         "month": "Apr.",
@@ -224,7 +224,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 5
+    "sort_order": 1
   },
   {
     "category": "works_in_progress",
@@ -235,7 +235,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 2
+    "sort_order": 4
   },
   {
     "category": "works_in_progress",
@@ -246,7 +246,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 4
+    "sort_order": 2
   },
   {
     "category": "works_in_progress",
@@ -268,7 +268,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 1
+    "sort_order": 5
   },
   {
     "category": "presentation_only",
@@ -283,7 +283,7 @@
         "notes": "[b]Best Student Paper finalist[/b]"
       }
     ],
-    "sort_order": 1
+    "sort_order": 4
   },
   {
     "category": "presentation_only",
@@ -296,6 +296,6 @@
         "venue": "OpenAI (virtual)"
       }
     ],
-    "sort_order": 2
+    "sort_order": 1
   }
 ]

@@ -1,6 +1,7 @@
 {
   "econometrics & statistics": [
-    "causal inference (DID, RDD, experimental design)"
+    "causal inference (DID, RDD, experimental design)",
+    "econometrics"
   ],
   "machine learning & AI": [
     "Large Language Models (LLMs)",
@@ -8,7 +9,6 @@
     "local LLM",
     "computer vision",
     "multimodal feature extraction",
-    "agentic systems",
     "PyTorch"
   ],
   "programming & tools": [
