@@ -52,7 +52,7 @@ window.SITE_CONFIG = {
     photos: ['2.png', '1.jpg'],  // array of photo filenames
     photoPath: 'assets/headshots/',
     // Gallery images - array of filenames (empty = no gallery)
-    galleryImages: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpeg']
+    galleryImages: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
     // showGallery defaults to true; set to false to hide gallery section
   },
 
