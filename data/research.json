@@ -224,7 +224,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 1
+    "sort_order": 3
   },
   {
     "category": "works_in_progress",
@@ -235,7 +235,7 @@
     "conference_workshop_presentations": [],
     "notes": "Invited textbook chapter",
     "links": [],
-    "sort_order": 1
+    "sort_order": 3
   },
   {
     "category": "works_in_progress",
@@ -246,7 +246,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 1
+    "sort_order": 2
   },
   {
     "category": "works_in_progress",
@@ -257,7 +257,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 1
+    "sort_order": 3
   },
   {
     "category": "works_in_progress",
@@ -279,7 +279,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 3
+    "sort_order": 1
   },
   {
     "category": "works_in_progress",
@@ -287,7 +287,7 @@
     "authors": "Avery Chen, Eric B. Zhou, Yingkang Xie",
     "status": "Exploration",
     "conference_workshop_presentations": [],
-    "sort_order": 3
+    "sort_order": 1
   },
   {
     "category": "presentation_only",
