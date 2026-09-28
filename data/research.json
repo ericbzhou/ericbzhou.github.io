@@ -228,6 +228,17 @@
   },
   {
     "category": "works_in_progress",
+    "title": "AI, Creativity, and Human Taste Collapse",
+    "authors": "Eric B. Zhou, Dokyun Lee, Moritz von Zahn",
+    "status": "Drafting",
+    "invited_talks": [],
+    "conference_workshop_presentations": [],
+    "notes": "Invited textbook chapter",
+    "links": [],
+    "sort_order": 1
+  },
+  {
+    "category": "works_in_progress",
     "title": "The Great Equalizer or the Rich Get Richer? Generative AI Usage and Firm Performance",
     "authors": "[A][CF]Zhiwei Wang, [CF]Eric B. Zhou",
     "status": "Data exploration",
@@ -246,7 +257,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 2
+    "sort_order": 3
   },
   {
     "category": "works_in_progress",
@@ -257,7 +268,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 3
+    "sort_order": 2
   },
   {
     "category": "works_in_progress",
@@ -268,7 +279,7 @@
     "conference_workshop_presentations": [],
     "notes": "",
     "links": [],
-    "sort_order": 5
+    "sort_order": 1
   },
   {
     "category": "presentation_only",
@@ -283,7 +294,7 @@
         "notes": "[b]Best Student Paper finalist[/b]"
       }
     ],
-    "sort_order": 4
+    "sort_order": 1
   },
   {
     "category": "presentation_only",
@@ -296,6 +307,6 @@
         "venue": "OpenAI (virtual)"
       }
     ],
-    "sort_order": 1
+    "sort_order": 2
   }
 ]
